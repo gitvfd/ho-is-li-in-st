@@ -33,7 +33,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
 	    .style("fill","#78869f" )
-	    .text("Most inequal");
+	    .text("Least inequal");
 	
 	ineqIndic.append("text")
 		.attr("class","tempBox")
@@ -43,13 +43,13 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
 	    .style("fill","#78869f" )
-	    .text("Least inequal");
+	    .text("Most inequal");
 
 	ineqIndic.append("image")
 		.attr("class","tempBox")
 		.attr("x",0.5*marginRight)
 		.attr("y",2*marginTop)
-		//.attr("width",2*marginRight)
+		.attr("width",(2*width/3 - marginBottom/2-2*marginTop)/8)
 		.attr("height",2*width/3 - marginBottom/2-2*marginTop)
 		.attr("xlink:href", "icons/arrow2.svg");
 
@@ -74,6 +74,25 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		if (toPush!="not"&& toPush!="average")
 			listIneqIndi.push(toPush)
 	})
+
+
+    //define if inequalities are available fir selecyed country
+   var listIneqIndiCou=[];
+
+    var listineqCountry = ineqData.filter(function(d){return d.ISO==ISO});
+	
+	listineqCountry.forEach(function(d){
+		var toPush=d.typeIneq;
+
+		listIneqIndiCou.forEach(function(k){
+			if(d.typeIneq==k){
+				toPush="not";
+			}
+		})
+		if (toPush!="not"&& toPush!="average")
+			listIneqIndiCou.push(toPush)
+	})
+
 
 	//Define Scales
 	var ordinalScale = d3.scaleBand()
@@ -140,7 +159,10 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 				return sizeSquare;
 		})
 		.attr("fill",function (d){
-			if(ISO==d.ISO)
+			var tempFill=listIneqIndiCou.indexOf(d.typeIneq)
+			if (tempFill==-1)
+				return "#b7b7b7";
+			else if(ISO==d.ISO)
 				return "#4A4A4A";
 			else
 				return colorScale(indicatorDim);
@@ -167,6 +189,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		.attr("x",-10)
 		.attr("y",0)
 		.attr("width",30)
+		.attr("height",30)
 		.attr("xlink:href", function(d){
 				var key=d;
 				var url="icons/"+key+".svg";

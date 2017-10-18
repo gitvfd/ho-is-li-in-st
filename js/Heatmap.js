@@ -33,6 +33,7 @@ function heatMap(listIneq,listVariable,IsoIneq){
 		.attr("x",0.1*gridSize)
 		.attr("y",0.1*gridSize)
 		.attr("width",0.8*gridSize)
+		.attr("height",0.8*gridSize)
 		    .attr("xlink:href", function(d){
 					var key=key=d;
 					var url="icons/"+key+".svg";
@@ -65,6 +66,7 @@ function heatMap(listIneq,listVariable,IsoIneq){
 			.attr("x",0.1*gridSize)
 			.attr("y",0.1*gridSize)
 			.attr("width",0.8*gridSize)
+			.attr("height",0.8*gridSize)
 		    .attr("xlink:href", function(d){
 		    	var test="";
 		    		dimensionList.forEach(function(k){
@@ -108,7 +110,52 @@ function heatMap(listIneq,listVariable,IsoIneq){
 		}).on("mouseout",function(d){
 			document.getElementById("tooltipHeatValue").innerHTML='';
 		});
-             
 
-//	console.log(listIneq)
+
+
+
+
+////////////
+// LEGEND //  
+////////////
+
+//Append a defs (for definition) element to your SVG
+var defs = heatmap.append("defs");
+
+//Append a linearGradient element to the defs and give it a unique id
+var linearGradient = defs.append("linearGradient")
+    .attr("id", "linear-gradient");
+
+//Set the color for the start (0%)
+linearGradient.append("stop") 
+    .attr("offset", "0%")   
+    .attr("stop-color", "#f7f7f7"); //light blue
+
+//Set the color for the end (100%)
+linearGradient.append("stop") 
+    .attr("offset", "100%")   
+    .attr("stop-color", "#F8282E"); //dark blue
+//Draw the rectangle and fill with gradient
+
+heatmap.append("rect")
+	.attr("width", 0.6*width)
+	.attr("height", gridSize/2)
+      .attr("x", 0.2*width)
+      .attr("y", 1.25*listIneq.length*width /listVariable.length -gridSize/2 )
+	.style("fill", "url(#linear-gradient)");
+
+//Append title
+heatmap.append("text")
+	.attr("class", "legendTitle")
+	.attr("x", 0.2*width)
+	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
+	.style("text-anchor", "middle")
+	.text("Most inequal");
+
+heatmap.append("text")
+	.attr("class", "legendTitle")
+	.attr("x", 0.8*width)
+	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
+	.style("text-anchor", "middle")
+	.text("Least inequal");
 }

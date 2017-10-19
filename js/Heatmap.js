@@ -65,7 +65,7 @@ function heatMap(listIneq,listVariable,IsoIneq){
 		})
 		.on("mouseout",function(d){
 		    //Hide the tooltip
-			d3.select("#tooltipVarIcons").classed("hidden", true);	       
+			d3.select("#tooltipIneqIcons").classed("hidden", true);	       
 		});
 
 

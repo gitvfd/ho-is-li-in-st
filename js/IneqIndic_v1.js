@@ -17,7 +17,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	//Add new svg 
 	ineqIndic
       .attr("width", width )
-      .attr("height", 2*width/3 )
+      .attr("height", width/2 )
       .append("g")
       .attr("transform", "translate(" + 0 + "," + 0 + ")");
       
@@ -38,7 +38,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	ineqIndic.append("text")
 		.attr("class","tempBox")
 	    .attr("x", 0.25*marginRight)
-	    .attr("y", 2*width/3 - marginBottom/2)
+	    .attr("y", width/2 - marginBottom/2)
 	    .attr("dy", ".35em")
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
@@ -50,7 +50,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		.attr("x",0.5*marginRight)
 		.attr("y",2*marginTop)
 		.attr("width",(2*width/3 - marginBottom/2-2*marginTop)/8)
-		.attr("height",2*width/3 - marginBottom/2-2*marginTop)
+		.attr("height",width/2 - marginBottom/2-2*marginTop)
 		.attr("xlink:href", "icons/arrow2.svg");
 
 
@@ -76,7 +76,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	})
 
 
-    //define if inequalities are available fir selecyed country
+    //define if inequalities are available for selected country
    var listIneqIndiCou=[];
 
     var listineqCountry = ineqData.filter(function(d){return d.ISO==ISO});
@@ -93,15 +93,15 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 			listIneqIndiCou.push(toPush)
 	})
 
-
 	//Define Scales
 	var ordinalScale = d3.scaleBand()
 		.domain(listIneqIndi)
-		.range([3*marginLeft,width-marginRight]);
+		//.range([3*marginLeft,width-marginRight]);
+		.range([3*marginLeft+width/2-listIneqIndi.length*width/12,width/2+listIneqIndi.length*width/12]);
 
 	var linearScale = d3.scaleLinear()
 		.domain([0,1])
-		.range([2*width/3-marginBottom,3*marginTop]);
+		.range([width/2-marginBottom,3*marginTop]);
 
 
 
@@ -111,7 +111,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	var line = d3.line()
     	.x(function(d, i) { return ordinalScale(d.typeIneq) + sizeSquare/2; }) // set the x values for the line generator
     	.y(function(d) { 
-		    	return linearScale(d.normalized) + sizeSquare/2;
+		    	return linearScale(d.normalized) + sizeSquare/4;
 		}) // set the y values for the line generator 
     	//.curve(d3.curveMonotoneX);
     	.curve(d3.curveLinear)
@@ -136,25 +136,25 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    })
 	    .attr("x", function(d) {
 			if(ISO==d.ISO)
-			return ordinalScale(d.typeIneq)-2;
+			return ordinalScale(d.typeIneq)-3;
 				else
 			return ordinalScale(d.typeIneq);
 	    })
 	    .attr("y", function(d) {
 			if(ISO==d.ISO)
-	    	return linearScale(d.normalized)-2;
+	    	return linearScale(d.normalized);
 	    		else
 	    	return linearScale(d.normalized);
 	    })
 		.attr("height",function(d){
 			if(ISO==d.ISO)
-				return sizeSquare+4;
+				return sizeSquare/2;
 			else
-				return sizeSquare;
+				return sizeSquare/2;
 		})
 		.attr("width",function(d){
 			if(ISO==d.ISO)
-				return sizeSquare+4;
+				return sizeSquare+6;
 			else
 				return sizeSquare;
 		})
@@ -172,6 +172,65 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 				return 1;
 			else
 				return 0.25;
+		})
+		.on("mouseover",function(d){
+	    	d3.select(this)
+				.attr("opacity",0.5);
+
+			var xPosition = d3.event.pageX+20;
+			var yPosition = d3.event.pageY+15;
+
+			if (yPosition>window.innerHeight-200)
+				yPosition=yPosition-100;
+
+			var indicName;
+			indicatorList.forEach(function(k){
+				if(d.variable==k.code)
+					indicName=k.Indicator;
+			})
+
+			var indicMeasure;
+			indicatorList.forEach(function(k){
+				if(d.variable==k.code)
+					indicMeasure=k.Measure;
+			})
+
+			var countryName;
+			correspondanceISO.forEach(function(k){
+
+				if(d.ISO==k.ISO){
+					countryName=k.country;}
+
+			})
+
+		     d3.select("#countryName")
+		        .text(countryName);
+
+
+		     d3.select("#indicatorName")
+		        .text(indicName);
+		        
+		        
+		    d3.select("#indicatorValue")
+		        .text(d.value);
+
+
+		    d3.select("#indicatorMeasure")
+		        .text(indicMeasure);
+
+			d3.select("#avgIndicTooltip")
+		        .style("left", xPosition + "px")
+		        .style("top", yPosition + "px") ;
+
+			d3.select("#avgIndicTooltip").classed("hidden", false);
+	    })
+	    .on("mouseout",function(d){
+				d3.select(this)
+					.attr("opacity",  1)
+	            
+	            //Hide the tooltip
+				d3.select("#avgIndicTooltip").classed("hidden", true);	            
+
 		})
 
 
@@ -196,12 +255,30 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    		return url;	
 	    })
 		.on("mouseover",function(d){
-			document.getElementById("tooltipIneqIcons").innerHTML="Definition";
+
+			var xPosition = d3.event.pageX+20;
+			var yPosition = d3.event.pageY+15;
+
+			if (yPosition>window.innerHeight-200)
+				yPosition=yPosition-100;
+
+			
+		     d3.select("#inequalityType")
+		        .text("inequality type");
+
+
+		     d3.select("#inequalityDef")
+		        .text("Definition");
+		        
+			d3.select("#tooltipIneqIcons")
+		        .style("left", xPosition + "px")
+		        .style("top", yPosition + "px") ;
+
+			d3.select("#tooltipIneqIcons").classed("hidden", false);
 		})
 		.on("mouseout",function(d){
-			document.getElementById("tooltipIneqIcons").innerHTML="";
+				d3.select("#tooltipIneqIcons").classed("hidden", true);	
 		});
-
 
 
 }

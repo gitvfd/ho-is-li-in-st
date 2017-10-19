@@ -29,7 +29,7 @@ function distriIndicViz(selectedIndic,ISO){
 	
 	distributionIndic
       .attr("width", width )
-      .attr("height", 50 )
+      .attr("height", 30 )
       .append("g")
       .attr("transform", "translate(" + 0 + "," + 0 + ")");
 
@@ -44,13 +44,13 @@ function distriIndicViz(selectedIndic,ISO){
 				return distriScale(d.value);
 		    })
 		    .attr("cy", function(d) {
-		    	return 25;
+		    	return 15;
 		    })
 			.attr("r",function(d){
 				if(d.ISO==ISO)
-					return 12;
-				else
 					return 10;
+				else
+					return 6;
 			})
 			.attr("fill",function (d){
 				if(ISO==d.ISO)
@@ -66,7 +66,14 @@ function distriIndicViz(selectedIndic,ISO){
 			})
 			.on("mouseover",function(d){
 		    	d3.select(this)
-					.attr("opacity",0.5);
+					.attr("r",function(d){
+						if(d.ISO==ISO)
+							return 12;
+						else
+							return 12;
+					});
+
+
 
 				var xPosition = d3.event.pageX+20;
 				var yPosition = d3.event.pageY+15;
@@ -116,12 +123,23 @@ function distriIndicViz(selectedIndic,ISO){
 				d3.select("#avgIndicTooltip").classed("hidden", false);
 		    })
 		    .on("mouseout",function(d){
-					d3.select(this)
-						.attr("opacity",  1)
+		    	d3.select(this)
+					.attr("r",function(d){
+						if(d.ISO==ISO)
+							return 10;
+						else
+							return 6;
+					});
 		            
 		            //Hide the tooltip
 					d3.select("#avgIndicTooltip").classed("hidden", true);	            
 
+			})
+			.on("click",function(d){
+				console.log(d.ISO);
+				//document.getElementById("country_dropdown").options[document.getElementById("country_dropdown").selectedIndex].value=d.ISO;
+				document.getElementById("country_dropdown").value=d.ISO;
+				displayIneq(d.ISO);
 			})
 
 		var pickedindicatorText;

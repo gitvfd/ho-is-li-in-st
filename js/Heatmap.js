@@ -34,17 +34,39 @@ function heatMap(listIneq,listVariable,IsoIneq){
 		.attr("y",0.1*gridSize)
 		.attr("width",0.8*gridSize)
 		.attr("height",0.8*gridSize)
-		    .attr("xlink:href", function(d){
-					var key=key=d;
-					var url="icons/"+key+".svg";
-		    		return url;	
-		    })
+	    .attr("xlink:href", function(d){
+				var key=key=d;
+				var url="icons/"+key+".svg";
+	    		return url;	
+	    })
 		.on("mouseover",function(d){
-			document.getElementById("tooltipIneqIcons").innerHTML="Definition";
+				var xPosition = d3.event.pageX+20;
+				var yPosition = d3.event.pageY+15;
+
+				if (yPosition>window.innerHeight-200)
+					yPosition=yPosition-100;
+
+
+
+			    d3.select("#inequalityType")
+			        .text(d);
+
+
+			    d3.select("#inequalityDef")
+			        .text("Definition");
+
+				d3.select("#tooltipIneqIcons")
+			        .style("left", xPosition + "px")
+			        .style("top", yPosition + "px") ;
+
+				d3.select("#tooltipIneqIcons").classed("hidden", false);
+
+
 		})
 		.on("mouseout",function(d){
-			document.getElementById("tooltipIneqIcons").innerHTML="";
-		});;
+		    //Hide the tooltip
+			d3.select("#tooltipVarIcons").classed("hidden", true);	       
+		});
 
 
 	var variableIcons = heatmap.selectAll("g.variable")
@@ -54,12 +76,6 @@ function heatMap(listIneq,listVariable,IsoIneq){
 		.attr("class","varIcons")
 		.attr("transform",function(d,i){
 			return "translate("+ (marginLeft + gridSize + scaleIndic(d) * gridSize ) + ","+ 0+ ")"
-		})
-		.on("mouseover",function(d){
-			document.getElementById("tooltipVarIcons").innerHTML=d;
-		})
-		.on("mouseout",function(d){
-			document.getElementById("tooltipVarIcons").innerHTML="";
 		});
 
 	variableIcons.append("image")
@@ -78,7 +94,44 @@ function heatMap(listIneq,listVariable,IsoIneq){
 					var key=test.replace(/ /g,"");
 					var url="icons/"+key+".png";
 		    		return url;	
-		    });
+		    })
+			.on("mouseover",function(d){
+					var xPosition = d3.event.pageX+20;
+					var yPosition = d3.event.pageY+15;
+
+					if (yPosition>window.innerHeight-200)
+						yPosition=yPosition-100;
+
+					var indicName;
+					var indicMeas;
+					indicatorList.forEach(function(k){
+						if(d==k.code){
+							indicName=k.Indicator;
+							indicMeas=k.Measure;
+
+						}
+					})
+
+				    d3.select("#heatIndicatorName")
+				        .text(indicName);
+
+
+				    d3.select("#heatIndicatorDef")
+				        .text(indicMeas);
+
+					d3.select("#tooltipVarIcons")
+				        .style("left", xPosition + "px")
+				        .style("top", yPosition + "px") ;
+
+					d3.select("#tooltipVarIcons").classed("hidden", false);
+
+
+			})
+			.on("mouseout",function(d){
+			    //Hide the tooltip
+				d3.select("#tooltipVarIcons").classed("hidden", true);	       
+			});
+
 		    
 	/**   var timeLabels = svg.selectAll(".timeLabel")
       .data(times)
@@ -106,10 +159,64 @@ function heatMap(listIneq,listVariable,IsoIneq){
 	  	.attr("height", gridSize)
 	  	.style("fill", function(d){return colorScale(parseFloat(d.normalized))})
 		.on("mouseover",function(d){
-			document.getElementById("tooltipHeatValue").innerHTML=parseFloat(d.normalized);
+			d3.select(this).style("opacity",0.5)//.attr("width",gridSize*1.2).attr("height",gridSize*1.2)
+			//document.getElementById("tooltipHeatValue").innerHTML=parseFloat(d.normalized);
+
+
+				var xPosition = d3.event.pageX+20;
+				var yPosition = d3.event.pageY+15;
+
+				if (yPosition>window.innerHeight-200)
+					yPosition=yPosition-100;
+
+				var indicName;
+				indicatorList.forEach(function(k){
+					if(d.variable==k.code)
+						indicName=k.Indicator;
+				})
+
+				var indicMeasure;
+				indicatorList.forEach(function(k){
+					if(d.variable==k.code)
+						indicMeasure=k.Measure;
+				})
+
+				var indicName;
+				dimensionList.forEach(function(k){
+
+					if(d.variable==k.code){
+						indicName=k.Indicator;}
+
+				})
+
+
+			     d3.select("#heatIneqType")
+			        .text(d.typeIneq);
+			        
+			        
+			    d3.select("#heatIndName")
+			        .text(indicName);
+
+
+			    d3.select("#heatValue")
+			        .text(parseFloat(d.value));
+
+				d3.select("#tooltipHeatValue")
+			        .style("left", xPosition + "px")
+			        .style("top", yPosition + "px") ;
+
+				d3.select("#tooltipHeatValue").classed("hidden", false);
+
+
 		}).on("mouseout",function(d){
-			document.getElementById("tooltipHeatValue").innerHTML='';
+
+			d3.select(this).style("opacity",1)//.attr("width",gridSize).attr("height",gridSize)
+			//document.getElementById("tooltipHeatValue").innerHTML='';
+
+		    //Hide the tooltip
+			d3.select("#tooltipHeatValue").classed("hidden", true);	       
 		});
+
 
 
 

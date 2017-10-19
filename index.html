@@ -80,7 +80,7 @@
 		<div class="button active" id="comparison">Country comparison</div>
 		<div class="button " id="heatmap">Inequality for one country </div>
 	</div>
-
+</div>
 	<!-- ***********************
 	    MAP
  	***********************-->
@@ -133,9 +133,15 @@
 	</div>
 
 
-	<div id="tooltipVarIcons"></div>
-	<div id="tooltipIneqIcons"></div>
-	<div id="tooltipHeatValue"></div>
+	<div id="tooltipVarIcons" class="hidden">
+		<b><span id="heatIndicatorName">Name</span></b><br/><span id="heatIndicatorDef">Definition</span><br/>
+	</div>
+	<div id="tooltipIneqIcons" class="hidden">
+		<b><span id="inequalityType">inequality type</span></b><br/><span id="inequalityDef">Definition</span><br/>
+	</div>
+	<div id="tooltipHeatValue" class="hidden">
+		<b><span id="heatIneqType">Type</span></b><br/><span id="heatIndName">indicator</span><br/><span id="heatValue">value</span><br/>
+	</div>
 
 		<br/>
 		<br/>

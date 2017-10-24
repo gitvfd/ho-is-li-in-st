@@ -27,5 +27,16 @@ function setupButtons() {
         //draw(buttonId);
       });
 
+    d3.select('#shareLink')
+    .on('click', function () {
+        // Remove active class from all buttons
+        d3.select('#shareContainer').style('visibility', "visible")
+    });
+
+    d3.select('#closeShare')
+    .on('click', function () {
+        // Remove active class from all buttons
+        d3.select('#shareContainer').style('visibility', "hidden")
+    });
 
   }  

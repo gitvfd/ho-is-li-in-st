@@ -261,14 +261,32 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 
 			if (yPosition>window.innerHeight-200)
 				yPosition=yPosition-100;
+					
+			var ineqName;
+			var ineqDef;
+			var ineqMessage;
+			inequalityList.forEach(function(k){
+				if(d==k.typeIneq){
+					ineqName=k.nameIneq
+					ineqDef=k.def;
+					ineqMessage=k.keyMessage;
+
+				}
+			})
+
+
+		    d3.select("#inequalityType")
+		        .text(ineqName);
+
+
+		    d3.select("#inequalityDef")
+		        .text(ineqDef);
+
+
+		    d3.select("#inequalityMessage")
+		        .text(ineqMessage);
 
 			
-		     d3.select("#inequalityType")
-		        .text("inequality type");
-
-
-		     d3.select("#inequalityDef")
-		        .text("Definition");
 		        
 			d3.select("#tooltipIneqIcons")
 		        .style("left", xPosition + "px")

@@ -60,7 +60,8 @@ function displayIneq(ISO){
 			countrySel=d.country;
 
 	})
-	document.getElementById("pickedCountry").innerHTML=countrySel;
+	document.getElementsByClassName("pickedCountry")[0].innerHTML=countrySel;
+	document.getElementsByClassName("pickedCountry")[1].innerHTML=countrySel;
 
 	// Draw Heatmap and inequality card
 	distriIndicViz(selectedIndic,ISO);

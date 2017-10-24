@@ -232,6 +232,11 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 				d3.select("#avgIndicTooltip").classed("hidden", true);	            
 
 		})
+			.on("click",function(d){
+				//document.getElementById("country_dropdown").options[document.getElementById("country_dropdown").selectedIndex].value=d.ISO;
+				document.getElementById("country_dropdown").value=d.ISO;
+				displayIneq(d.ISO);
+			});
 
 
 	var ineqIcons = ineqIndic.selectAll("g.ineq")

@@ -138,6 +138,8 @@ function distriIndicViz(selectedIndic,ISO){
 			.on("click",function(d){
 				//document.getElementById("country_dropdown").options[document.getElementById("country_dropdown").selectedIndex].value=d.ISO;
 				document.getElementById("country_dropdown").value=d.ISO;
+				
+				displayIneq(d.ISO);
 			})
 
 		var pickedindicatorText;

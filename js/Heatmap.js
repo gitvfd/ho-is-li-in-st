@@ -165,7 +165,13 @@ function heatMap(listIneq,listVariable,IsoIneq){
 
 	cards.append("title");              
 	cards.enter().append("rect")
-	  	.attr("x", function(d) { return marginLeft + gridSize +(scaleIndic(d.variable1) * gridSize); })
+	  	.attr("x", function(d) { 
+			var refParent;
+			relationshipList.forEach(function(f){
+				if(d.variable==f.variable){refParent=f.parents;}
+					
+			})
+	  		return marginLeft + gridSize +(scaleIndic(refParent) * gridSize); })
 	  	.attr("y", function(d) { return gridSize +(scaleIneq(d.typeIneq ) * gridSize);})
 	  	.attr("rx", 4)
 	  	.attr("ry", 4)
@@ -184,9 +190,15 @@ function heatMap(listIneq,listVariable,IsoIneq){
 				if (yPosition>window.innerHeight-200)
 					yPosition=yPosition-100;
 
-				var indicName;
+				var indicName; 
+				var refParent;
+				relationshipList.forEach(function(f){
+					if(d.variable==f.variable){refParent=f.parents;}
+						
+				})
+	  		
 				indicatorList.forEach(function(k){
-					if(d.variable==k.code)
+					if(refParent==k.code)
 						indicName=k.Indicator;
 				})
 
@@ -214,7 +226,7 @@ function heatMap(listIneq,listVariable,IsoIneq){
 
 
 			    d3.select("#heatValue")
-			        .text(parseFloat(d.value));
+			        .text(d.desc);
 
 				d3.select("#tooltipHeatValue")
 			        .style("left", xPosition + "px")

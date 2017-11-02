@@ -63,12 +63,13 @@
 			<option value="IW_HNFW" >Household net wealth</option>
 			<option value="JE_EMPL" >Employment rate</option>
 			<option value="JE_PE" >Average annual gross earnings per full-time employee</option>
-			<option value="JE_LTUR" >Long-term unemployment rate*</option>
+			<option value="JE_LP" >Low pay</option>
+			<option value="JE_LTUR" >Long-term unemployment rate</option>
 			<option value="HO_NUMR" >Rooms per person</option>
 			<option value="HO_EXP" >Housing expenditure</option>
 			<option value="WL_EWLH" >Employees working very long hours</option>
 			<option value="WL_LEPC" >Time devoted to leisure and personal care</option>
-			<option value="HS_LEB" >Life expectancy at birth*</option>
+			<option value="HS_LEB" >Life expectancy at birth</option>
 			<option value="HS_SFRH" >Perceived health status</option>
 			<option value="ES_EDUA" >Educational attainment of the adult working-aged population</option>
 			<option value="ES_ADCO" >Adult competencies (PIAAC)</option>
@@ -138,7 +139,15 @@
  	</div>
  	<div class="button btn_share" id="shareLink">
 		<object type="image/svg+xml" height="14" width="15" data="img/share_neu.svg">
-    	</object> Share 
+    	</object class="text_btn"> Share 
+	</div>
+ 	<div class="button btn_share" id="downloadLink">
+		<object type="image/svg+xml" height="14" width="15" data="img/download.svg">
+    	</object class="text_btn"> Download 
+	</div>
+ 	<div class="button btn_share" id="helpLink">
+		<object type="image/svg+xml" height="14" width="15" data="img/help.svg">
+    	</object class="text_btn"> Help 
 	</div>
 	<div class="siteFooterBar">
         <a href="http://www.oecd.org" target="_blank"><img  src="img/SYMBOL_20cm.png" ></img></a>
@@ -168,7 +177,11 @@
 		<br/>
 <script src="libs/d3.v4.min.js"></script>
 <script src="js/setupbutton.js"></script>
-
+<script src="js/displayIneq.js"></script>
+<script src="js/normalize.js"></script>
+<script src="js/distriIndicViz.js"></script>
+<script src="js/IneqIndic.js"></script>
+<script src="js/Heatmap.js"></script>
 <script type="text/javascript">
 
 /** SET main variables for the visualisation**/
@@ -183,17 +196,17 @@
 
 /** LOAD ALL DATA **/
 
-	var centroid=[];
-	d3.csv("data/country_centroid.csv",function(error, countrydata) {
-		countrydata.forEach(function(d){
-				centroid.push(d)
+
+	var relationshipList=[];
+	d3.tsv("data/relationship.tsv",function(error, data) {
+		data.forEach(function(d){
+				relationshipList.push(d)
 			})
 
 	})
 
-
 	var indicatorList=[];
-	d3.csv("data/indicator_list.csv",function(error, data) {
+	d3.tsv("data/indicator_list.tsv",function(error, data) {
 		data.forEach(function(d){
 				indicatorList.push(d)
 			})
@@ -226,7 +239,7 @@
 	
 	var datatot=[];
 	var counter=0; // define counter to launch function at the end of the forEach
-	d3.csv("data/tot_data.csv",function(error, data) {
+	d3.tsv("data/tot_data.tsv",function(error, data) {
 		data.forEach(function(d){
 				datatot.push(d);
 				counter++; 
@@ -239,6 +252,9 @@
 
 
 	var distriData; // placeholder for distribution viz
+/**Rounding principle**/
+	var f = d3.format(".1f");
+
 
 /** Define Color Scale **/
 	var colorScale = d3.scaleOrdinal()
@@ -262,23 +278,11 @@
     	var heatmap = d3.select("#heatMapVisualisation").append("svg")
 
 
-console.log(window.location.href)
 //INITIALIZE BUTTONS
 
 setupButtons();
 
 </script>
-<script src="js/normalize.js"></script>
-<!--
-
-<script src="libs/d3-geo-projection.v1.min.js"></script>
-<script src="js/map.js"></script>
-<script src="js/resize.js"></script>
-<script src="js/updateMap.js"></script>-->
-<script src="js/displayIneq.js"></script>
-<script src="js/distriIndicViz.js"></script>
-<script src="js/IneqIndic.js"></script>
-<script src="js/Heatmap.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

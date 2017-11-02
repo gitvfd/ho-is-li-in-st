@@ -2,18 +2,29 @@ function displayIneq(ISO){
 	var selectedIndic= document.getElementById("indic_dropdown").options[document.getElementById("indic_dropdown").selectedIndex].value;
 	var ISO= document.getElementById("country_dropdown").options[document.getElementById("country_dropdown").selectedIndex].value;
 
+
+
 	var isoIndicIneq=[];
 	var allIsoIndicIneq=[];
 	var IsoIneq=[];
 
 	datatot.forEach(function(d){
-		if((d.variable1==selectedIndic) && (d.ISO!="OECD")&& (d.value!=""))
+		var refParent;
+		relationshipList.forEach(function(f){
+			if(d.variable==f.variable){refParent=f.parents;}
+				
+		})
+		if((refParent==selectedIndic) && (d.ISO!="OECD")&& (d.value!=""))
 			allIsoIndicIneq.push(d);
 	})
 
-
 	datatot.forEach(function(d){
-		if((d.variable1==selectedIndic) && (d.ISO==ISO)&& (d.value!=""))
+		var refParent;
+		relationshipList.forEach(function(f){
+			if(d.variable==f.variable){refParent=f.parents;}
+				
+		})
+		if((refParent==selectedIndic) && (d.ISO==ISO)&& (d.value!=""))
 			isoIndicIneq.push(d);
 	})
 
@@ -27,10 +38,16 @@ function displayIneq(ISO){
 	var listIneq=[];
 
 	IsoIneq.forEach(function(d){
-		var toPush=d.variable1;
+		var refParent;
+		relationshipList.forEach(function(f){
+			if(d.variable==f.variable){refParent=f.parents;}
+				
+		})
+		
+		var toPush=refParent;
 
 		listVariable.forEach(function(k){
-			if(d.variable1==k){
+			if(refParent==k){
 				toPush="not";
 			}
 		})
@@ -38,7 +55,6 @@ function displayIneq(ISO){
 			listVariable.push(toPush)
 	})
 
-//	console.log(listVariable)
 
 	IsoIneq.forEach(function(d){
 		var toPush=d.typeIneq;
@@ -62,6 +78,7 @@ function displayIneq(ISO){
 	})
 	document.getElementsByClassName("pickedCountry")[0].innerHTML=countrySel;
 	document.getElementsByClassName("pickedCountry")[1].innerHTML=countrySel;
+
 
 	// Draw Heatmap and inequality card
 	distriIndicViz(selectedIndic,ISO);

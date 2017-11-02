@@ -7,14 +7,18 @@ body{
 }
 
 .heading1{
+  float:left;
 	font-family: CaeciliaLTStd-Bold;
-	font-size: 36px;
+	font-size: 32px;
 	color: #4A4A4A;
+  margin:0px 10px 10px 0px;
 }
 
 .heading1Sub{
+  padding-top:8px;
+  margin-bottom: 15px;
   font-family: CaeciliaLTStd-Italic;
-  font-size: 28px;
+  font-size: 24px;
   color: #4A4A4A;
 }
 
@@ -149,7 +153,7 @@ section {
   padding: 5px 20px 5px 20px;
   cursor: pointer;
   text-align: center;
-  font: 14px  TheSerif, Helvetica, Arial, sans-serif;
+  font: 16px  TheSerif, Helvetica, Arial, sans-serif;
   font-weight:300;
   float:left;
   margin: 2px 5px 2px 5px;
@@ -268,7 +272,8 @@ section {
 
 
 .btn_share {
-    clear: both; float: left; display: block; position: relative; 
+    /**clear: both; **/
+    float: left; display: block; position: relative; 
     color:#fff;
     text-shadow:rgba(0,0,0,0.5) 0 1px 0;
     border: 1px solid #688C28;
@@ -347,7 +352,7 @@ section {
     -webkit-box-shadow: inset 0px 0px 0px 0px #bbdaf7;
     box-shadow: inset 0px 0px 0px 0px #bbdaf7;
     border: 0px;
-    font-size: 12px;
+    /**font-size: 12px;**/
 }
 
 

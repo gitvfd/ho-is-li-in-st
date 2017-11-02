@@ -2,9 +2,9 @@ function normalize() {
 	var temp=[]
 	var min,max;
 	var logic=0;
-
-	indicatorList.forEach(function(d){
-		temp=datatot.filter(function(v) { return v.variable == d.code; })
+	
+	relationshipList.forEach(function(d){
+		temp=datatot.filter(function(v) { return v.variable == d.variable; })
 
 		min = d3.min(temp.map(function(k) {return (parseFloat(k.value));} ));
 		max = d3.max(temp.map(function(l) {return (parseFloat(l.value));} ));
@@ -18,12 +18,12 @@ function normalize() {
 
  //&& (n.typeIneq!="vertical")
 		datatot.forEach(function(n){
-			if(n.typeIneq=="vertical"){
-				if((n.variable == d.code) && (d.value!="") )
+			if(n.typeIneq=="vertical" || n.typeIneq=="deprivation"){
+				if((n.variable == d.variable) && (d.value!="") )
 					n.normalized=scaleNeg(parseFloat(n.value))
 			}
 			else{
-				if((n.variable == d.code) && (d.value!="") )
+				if((n.variable == d.variable) && (d.value!="") )
 					n.normalized=scalePos(parseFloat(n.value))
 			}
 			/**else

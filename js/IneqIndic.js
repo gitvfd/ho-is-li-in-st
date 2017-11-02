@@ -57,7 +57,12 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
     //Prepare data
     var ineqData=[];
     allIsoIndicIneq.forEach(function(d){
-		if((d.variable1!=d.variable))
+		var refParent;
+		relationshipList.forEach(function(f){
+			if(d.variable==f.variable){refParent=f.parents;}
+				
+		})
+		if((refParent!=d.variable))
 			ineqData.push(d);
 	})
 
@@ -92,12 +97,13 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		if (toPush!="not"&& toPush!="average")
 			listIneqIndiCou.push(toPush)
 	})
+	console.log(listIneqIndi)
 
 	//Define Scales
 	var ordinalScale = d3.scaleBand()
 		.domain(listIneqIndi)
 		//.range([3*marginLeft,width-marginRight]);
-		.range([3*marginLeft+width/2-listIneqIndi.length*width/12,width/2+listIneqIndi.length*width/12]);
+		.range([3*marginLeft+width/2-listIneqIndi.length*width/16,width/2+listIneqIndi.length*width/16]);
 
 	var linearScale = d3.scaleLinear()
 		.domain([0,1])
@@ -163,7 +169,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 			if (tempFill==-1)
 				return "#b7b7b7";
 			else if(ISO==d.ISO)
-				return "#4A4A4A";
+				return "#476991";
 			else
 				return colorScale(indicatorDim);
 		})
@@ -184,15 +190,18 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 				yPosition=yPosition-100;
 
 			var indicName;
-			indicatorList.forEach(function(k){
-				if(d.variable==k.code)
-					indicName=k.Indicator;
-			})
-
 			var indicMeasure;
 			indicatorList.forEach(function(k){
-				if(d.variable==k.code)
+				var refParent;
+				relationshipList.forEach(function(f){
+					if(d.variable==f.variable){refParent=f.parents;}
+						
+				})
+				if(refParent==k.code){
+					indicName=k.Indicator;
 					indicMeasure=k.Measure;
+
+				}
 			})
 
 			var countryName;
@@ -212,11 +221,11 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		        
 		        
 		    d3.select("#indicatorValue")
-		        .text(d.value);
+		        .text(f(d.value));
 
 
 		    d3.select("#indicatorMeasure")
-		        .text(indicMeasure);
+		        .text(d.desc);
 
 			d3.select("#avgIndicTooltip")
 		        .style("left", xPosition + "px")

@@ -54,7 +54,7 @@ function distriIndicViz(selectedIndic,ISO){
 			})
 			.attr("fill",function (d){
 				if(ISO==d.ISO)
-					return "#4A4A4A";
+					return "#476991";
 				else
 					return colorScale(indicatorDim);
 			})
@@ -110,7 +110,7 @@ function distriIndicViz(selectedIndic,ISO){
 			        
 			        
 			    d3.select("#indicatorValue")
-			        .text(d.value);
+			        .text(f(d.value));
 
 
 			    d3.select("#indicatorMeasure")
@@ -136,9 +136,9 @@ function distriIndicViz(selectedIndic,ISO){
 
 			})
 			.on("click",function(d){
-				console.log(d.ISO);
 				//document.getElementById("country_dropdown").options[document.getElementById("country_dropdown").selectedIndex].value=d.ISO;
 				document.getElementById("country_dropdown").value=d.ISO;
+				
 				displayIneq(d.ISO);
 			})
 

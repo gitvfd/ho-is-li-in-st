@@ -1,7 +1,7 @@
 function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 
 	//size inequality country squares
-	var sizeSquare=10;
+	var sizeSquare=15;
 
 	//remove previous chart
 	ineqIndic.selectAll("*").remove();
@@ -97,7 +97,6 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		if (toPush!="not"&& toPush!="average")
 			listIneqIndiCou.push(toPush)
 	})
-	console.log(listIneqIndi)
 
 	//Define Scales
 	var ordinalScale = d3.scaleBand()
@@ -154,9 +153,9 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    })
 		.attr("height",function(d){
 			if(ISO==d.ISO)
-				return sizeSquare/2;
+				return sizeSquare/3;
 			else
-				return sizeSquare/2;
+				return sizeSquare/3;
 		})
 		.attr("width",function(d){
 			if(ISO==d.ISO)
@@ -181,7 +180,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		})
 		.on("mouseover",function(d){
 	    	d3.select(this)
-				.attr("opacity",0.5);
+				.style("opacity",0.5);
 
 			var xPosition = d3.event.pageX+20;
 			var yPosition = d3.event.pageY+15;
@@ -235,7 +234,12 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    })
 	    .on("mouseout",function(d){
 				d3.select(this)
-					.attr("opacity",  1)
+					.style("opacity",  function (d){
+						if(ISO==d.ISO)
+							return 1;
+						else
+							return 0.25;
+					})
 	            
 	            //Hide the tooltip
 				d3.select("#avgIndicTooltip").classed("hidden", true);	            

@@ -51,7 +51,27 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		.attr("y",2*marginTop)
 		.attr("width",(2*width/3 - marginBottom/2-2*marginTop)/8)
 		.attr("height",width/2 - marginBottom/2-2*marginTop)
-		.attr("xlink:href", "icons/arrow2.svg");
+		.attr("xlink:href", "icons/arrow2.svg")
+		.on("mouseover",function(){
+
+			var xPosition = d3.event.pageX+20;
+			var yPosition = d3.event.pageY+15;
+
+			if (yPosition>window.innerHeight-200)
+				yPosition=yPosition-100;
+
+			d3.select("#tooltipScaleExplanation")
+		        .style("left", xPosition + "px")
+		        .style("top", yPosition + "px") ;
+
+			d3.select("#tooltipScaleExplanation").classed("hidden", false);
+	    })
+	    .on("mouseout",function(d){
+	            
+	            //Hide the tooltip
+				d3.select("#tooltipScaleExplanation").classed("hidden", true);	            
+
+		});
 
 
     //Prepare data
@@ -219,8 +239,8 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		        .text(indicName);
 		        
 		        
-		    d3.select("#indicatorValue")
-		        .text(f(d.value));
+		    /**d3.select("#indicatorValue")
+		        .text(f(d.value));**/
 
 
 		    d3.select("#indicatorMeasure")

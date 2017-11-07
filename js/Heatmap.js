@@ -284,12 +284,12 @@ heatmap.append("text")
 	.attr("x", 0.2*width)
 	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
 	.style("text-anchor", "middle")
-	.text("Most inequal");
+	.text("Most unequal");
 
 heatmap.append("text")
 	.attr("class", "legendTitle")
 	.attr("x", 0.8*width)
 	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
 	.style("text-anchor", "middle")
-	.text("Least inequal");
+	.text("Least unequal");
 }

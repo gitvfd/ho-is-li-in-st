@@ -6,7 +6,7 @@ function heatMap(listIneq,listVariable,IsoIneq){
       
     var colorScale = d3.scaleLinear()//.scaleSequential(d3.interpolateReds)
           .domain([0, 1])
-          .range(["#f7f7f7", "#F8282E"]);
+          .range(["#fee9ea", "#F8282E"]);
 
 
 	listVariable=listVariable.sort(function(a,b){return a.localeCompare(b);});
@@ -210,15 +210,19 @@ function heatMap(listIneq,listVariable,IsoIneq){
 
 				var indicName;
 				dimensionList.forEach(function(k){
-
 					if(d.variable==k.code){
 						indicName=k.Indicator;}
 
 				})
 
+				var indicIneqLabel;
+				inequalityList.forEach(function(k){
+					if(d.typeIneq==k.typeIneq){
+						indicIneqLabel=k.nameIneq;}
+				})
 
 			     d3.select("#heatIneqType")
-			        .text(d.typeIneq);
+			        .text(indicIneqLabel);
 			        
 			        
 			    d3.select("#heatIndName")
@@ -263,7 +267,7 @@ var linearGradient = defs.append("linearGradient")
 //Set the color for the start (0%)
 linearGradient.append("stop") 
     .attr("offset", "0%")   
-    .attr("stop-color", "#f7f7f7"); //light blue
+    .attr("stop-color", "#fee9ea"); //light blue
 
 //Set the color for the end (100%)
 linearGradient.append("stop") 
@@ -272,24 +276,65 @@ linearGradient.append("stop")
 //Draw the rectangle and fill with gradient
 
 heatmap.append("rect")
-	.attr("width", 0.6*width)
+	.attr("width", 0.5*width)
 	.attr("height", gridSize/2)
-      .attr("x", 0.2*width)
-      .attr("y", 1.25*listIneq.length*width /listVariable.length -gridSize/2 )
-	.style("fill", "url(#linear-gradient)");
+	.attr("x", 0.25*width)
+  	.attr("y", 1.25*listIneq.length*width /listVariable.length -gridSize/2 )
+	.style("fill", "url(#linear-gradient)")
+	.on("mouseover",function(){
+
+		var xPosition = d3.event.pageX+20;
+		var yPosition = d3.event.pageY+15;
+
+		if (yPosition>window.innerHeight-200)
+			yPosition=yPosition-100;
+
+		d3.select("#tooltipScaleExplanation")
+	        .style("left", xPosition + "px")
+	        .style("top", yPosition + "px") ;
+
+		d3.select("#tooltipScaleExplanation").classed("hidden", false);
+    })
+    .on("mouseout",function(d){
+            
+            //Hide the tooltip
+			d3.select("#tooltipScaleExplanation").classed("hidden", true);	            
+
+	});
 
 //Append title
 heatmap.append("text")
 	.attr("class", "legendTitle")
-	.attr("x", 0.2*width)
+	.attr("x", 0.25*width)
 	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
 	.style("text-anchor", "middle")
 	.text("Most unequal");
 
 heatmap.append("text")
 	.attr("class", "legendTitle")
-	.attr("x", 0.8*width)
+	.attr("x", 0.75*width)
 	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
 	.style("text-anchor", "middle")
 	.text("Least unequal");
+
+heatmap.append("text")
+	.attr("class", "legendTitleException")
+	.attr("x", 0.025*width)
+	.attr("y", 1.25*listIneq.length*width /listVariable.length - 28)
+	.style("text-anchor", "start")
+	.text("Grey areas indicate ");
+
+heatmap.append("text")
+	.attr("class", "legendTitleException")
+	.attr("x", 0.025*width)
+	.attr("y", 1.25*listIneq.length*width /listVariable.length - 14)
+	.style("text-anchor", "start")
+	.text("that data or inequality ")
+
+heatmap.append("text")
+	.attr("class", "legendTitleException")
+	.attr("x", 0.025*width)
+	.attr("y", 1.25*listIneq.length*width /listVariable.length )
+	.style("text-anchor", "start")
+	.text("measures are not available")
 }

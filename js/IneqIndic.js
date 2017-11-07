@@ -33,7 +33,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
 	    .style("fill","#78869f" )
-	    .text("Least inequal");
+	    .text("Least unequal");
 	
 	ineqIndic.append("text")
 		.attr("class","tempBox")
@@ -43,7 +43,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
 	    .style("fill","#78869f" )
-	    .text("Most inequal");
+	    .text("Most unequal");
 
 	ineqIndic.append("image")
 		.attr("class","tempBox")

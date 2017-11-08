@@ -42,13 +42,13 @@ function setupButtons() {
     d3.select('#downloadLink')
     .on('click', function () {
         // Remove active class from all buttons
-        window.open("http://en.wikipedia.org/wiki/", '_blank');
+        window.open("", '_blank');
     });
 
     d3.select('#helpLink')
     .on('click', function () {
         // Remove active class from all buttons
-        window.open("http://en.wikipedia.org/wiki/", '_blank');
+        window.open("mailto:wellbeing@oecd.org");
     });
 
   }  

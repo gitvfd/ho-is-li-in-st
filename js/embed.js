@@ -36,7 +36,7 @@ document.write("                    <\/a>-->");
 document.write("");
 document.write("                        <div >Embed code<\/div>");
 document.write("                        <br\/> ");
-document.write("                        <textarea readonly><iframewidth='900' height='620' frameborder='0' src='http:\/\/gitvfd.github.io'><\/iframe><\/textarea>");
+document.write("                        <textarea readonly><iframewidth='900' height='620' frameborder='0' src='http:\/\/gitvfd.github.io\/ho-is-li-in-st'><\/iframe><\/textarea>");
 document.write("                    ");
 document.write("                <\/div>");
 document.write("            <\/div>");

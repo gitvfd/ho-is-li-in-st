@@ -1,146 +1,1 @@
-variable	parents
-CG_SAYG	CG_SAYG
-CG_SAYG_age_old	CG_SAYG
-CG_SAYG_age_young	CG_SAYG
-CG_SAYG_depr	CG_SAYG
-CG_SAYG_edu_primary	CG_SAYG
-CG_SAYG_edu_secondary	CG_SAYG
-CG_SAYG_gender	CG_SAYG
-CG_SAYG_migrant	CG_SAYG
-CG_SAYG_ver_ineq	CG_SAYG
-CG_VOTO	CG_VOTO
-CG_VOTO_age_old	CG_VOTO
-CG_VOTO_age_young	CG_VOTO
-CG_VOTO_depr	CG_VOTO
-CG_VOTO_edu_primary	CG_VOTO
-CG_VOTO_edu_secondary	CG_VOTO
-CG_VOTO_gender	CG_VOTO
-EQ_AIRP	EQ_AIRP
-EQ_AIRP_depr	EQ_AIRP
-EQ_SATW	EQ_SATW
-EQ_SATW_age_old	EQ_SATW
-EQ_SATW_age_young	EQ_SATW
-EQ_SATW_depr	EQ_SATW
-EQ_SATW_edu_primary	EQ_SATW
-EQ_SATW_edu_secondary	EQ_SATW
-EQ_SATW_gender	EQ_SATW
-ES_ADCO	ES_ADCO
-ES_ADCO_age_old	ES_ADCO
-ES_ADCO_age_young	ES_ADCO
-ES_ADCO_depr	ES_ADCO
-ES_ADCO_edu_primary	ES_ADCO
-ES_ADCO_edu_secondary	ES_ADCO
-ES_ADCO_gender	ES_ADCO
-ES_ADCO_ver_ineq	ES_ADCO
-ES_EDUA	ES_EDUA
-ES_EDUA_age_old	ES_EDUA
-ES_EDUA_age_young	ES_EDUA
-ES_EDUA_depr	ES_EDUA
-ES_EDUA_gender	ES_EDUA
-ES_STCS	ES_STCS
-ES_STCS_depr	ES_STCS
-ES_STCS_edu_primary	ES_STCS
-ES_STCS_edu_secondary	ES_STCS
-ES_STCS_gender	ES_STCS
-ES_STCS_migrant	ES_STCS
-ES_STCS_ver_ineq	ES_STCS
-HO_EXP	HO_EXP
-HO_EXP_depr	HO_EXP
-HO_NUMR	HO_NUMR
-HO_NUMR_depr	HO_NUMR
-HO_NUMR_migrant	HO_NUMR
-HS_LEB	HS_LEB
-HS_LEB_edu_primary	HS_LEB
-HS_LEB_edu_secondary	HS_LEB
-HS_LEB_ver_ineq	HS_LEB
-HS_SFRH	HS_SFRH
-HS_SFRH_age_old	HS_SFRH
-HS_SFRH_age_young	HS_SFRH
-HS_SFRH_depr	HS_SFRH
-HS_SFRH_edu_primary	HS_SFRH
-HS_SFRH_edu_secondary	HS_SFRH
-HS_SFRH_gender	HS_SFRH
-HS_SFRH_migrant	HS_SFRH
-IW_HADI	IW_HADI
-IW_HADI_age_old	IW_HADI
-IW_HADI_age_young	IW_HADI
-IW_HADI_depr	IW_HADI
-IW_HADI_migrant	IW_HADI
-IW_HADI_ver_ineq	IW_HADI
-IW_HNFW	IW_HNFW
-IW_HNFW_age_old	IW_HNFW
-IW_HNFW_age_young	IW_HNFW
-IW_HNFW_depr	IW_HNFW
-IW_HNFW_edu_primary	IW_HNFW
-IW_HNFW_edu_secondary	IW_HNFW
-IW_HNFW_migrant	IW_HNFW
-IW_HNFW_ver_ineq	IW_HNFW
-JE_LTUR	JE_LTUR
-JE_EMP_age_old	JE_LTUR
-JE_EMP_age_young	JE_LTUR
-JE_EMP_depr	JE_LTUR
-JE_EMP_edu_primary	JE_LTUR
-JE_EMP_edu_secondary	JE_LTUR
-JE_EMP_gender	JE_LTUR
-JE_EMPL	JE_EMPL
-JE_EMPL_age_old	JE_EMPL
-JE_EMPL_age_young	JE_EMPL
-JE_EMPL_edu_primary	JE_EMPL
-JE_EMPL_edu_secondary	JE_EMPL
-JE_EMPL_gender	JE_EMPL
-JE_LP	JE_LP
-JE_LP_depr	JE_LP
-JE_LP_gender	JE_LP
-JE_PE	JE_PE
-JE_PE_age_old	JE_PE
-JE_PE_age_young	JE_PE
-JE_PE_edu_primary	JE_PE
-JE_PE_edu_secondary	JE_PE
-JE_PE_gender	JE_PE
-JE_PE_ver_ineq	JE_PE
-PS_HOMI	PS_HOMI
-PS_HOMI_depr	PS_HOMI
-PS_HOMI_gender	PS_HOMI
-PS_SFRV	PS_SFRV
-PS_SFRV_age_old	PS_SFRV
-PS_SFRV_age_young	PS_SFRV
-PS_SFRV_depr	PS_SFRV
-PS_SFRV_edu_primary	PS_SFRV
-PS_SFRV_edu_secondary	PS_SFRV
-PS_SFRV_gender	PS_SFRV
-PS_SFRV_migrant	PS_SFRV
-SC_SNTWS	SC_SNTWS
-SC_SNTWS_age_old	SC_SNTWS
-SC_SNTWS_age_young	SC_SNTWS
-SC_SNTWS_depr	SC_SNTWS
-SC_SNTWS_edu_primary	SC_SNTWS
-SC_SNTWS_edu_secondary	SC_SNTWS
-SC_SNTWS_gender	SC_SNTWS
-SC_SNTWS_migrant	SC_SNTWS
-SC_TSOC	SC_TSOC
-SC_TSOC_age_old	SC_TSOC
-SC_TSOC_age_young	SC_TSOC
-SC_TSOC_gender	SC_TSOC
-SC_TSOC_ver_ineq	SC_TSOC
-SW_LIFS	SW_LIFS
-SW_LIFS_age_old	SW_LIFS
-SW_LIFS_age_young	SW_LIFS
-SW_LIFS_depr	SW_LIFS
-SW_LIFS_edu_primary	SW_LIFS
-SW_LIFS_edu_secondary	SW_LIFS
-SW_LIFS_gender	SW_LIFS
-SW_LIFS_migrant	SW_LIFS
-SW_LIFS_ver_ineq	SW_LIFS
-WL_EWLH	WL_EWLH
-WL_EWLH_age_old	WL_EWLH
-WL_EWLH_age_young	WL_EWLH
-WL_EWLH_depr	WL_EWLH
-WL_EWLH_edu_primary	WL_EWLH
-WL_EWLH_edu_secondary	WL_EWLH
-WL_EWLH_gender	WL_EWLH
-WL_EWLH_ver_ineq	WL_EWLH
-WL_LEPC	WL_LEPC
-WL_LEPC_age_old	WL_LEPC
-WL_LEPC_age_young	WL_LEPC
-WL_LEPC_gender	WL_LEPC
-WL_LEPC_ver_ineq	WL_LEPC
+variable	parents	ineqTypeCG_SAYG	CG_SAYG	averageCG_SAYG_age_old	CG_SAYG	age_oldCG_SAYG_age_young	CG_SAYG	age_youngCG_SAYG_depr	CG_SAYG	deprCG_SAYG_edu_primary	CG_SAYG	edu_primaryCG_SAYG_edu_secondary	CG_SAYG	edu_secondaryCG_SAYG_gender	CG_SAYG	genderCG_SAYG_migrant	CG_SAYG	migrantCG_SAYG_ver_ineq	CG_SAYG	ver_ineqCG_VOTO	CG_VOTO	averageCG_VOTO_age_old	CG_VOTO	age_oldCG_VOTO_age_young	CG_VOTO	age_youngCG_VOTO_depr	CG_VOTO	deprCG_VOTO_edu_primary	CG_VOTO	edu_primaryCG_VOTO_edu_secondary	CG_VOTO	edu_secondaryCG_VOTO_gender	CG_VOTO	genderEQ_AIRP	EQ_AIRP	averageEQ_AIRP_depr	EQ_AIRP	deprEQ_SATW	EQ_SATW	averageEQ_SATW_age_old	EQ_SATW	age_oldEQ_SATW_age_young	EQ_SATW	age_youngEQ_SATW_depr	EQ_SATW	deprEQ_SATW_edu_primary	EQ_SATW	edu_primaryEQ_SATW_edu_secondary	EQ_SATW	edu_secondaryEQ_SATW_gender	EQ_SATW	genderES_ADCO	ES_ADCO	averageES_ADCO_age_old	ES_ADCO	age_oldES_ADCO_age_young	ES_ADCO	age_youngES_ADCO_depr	ES_ADCO	deprES_ADCO_edu_primary	ES_ADCO	edu_primaryES_ADCO_edu_secondary	ES_ADCO	edu_secondaryES_ADCO_gender	ES_ADCO	genderES_ADCO_ver_ineq	ES_ADCO	ver_ineqES_EDUA	ES_EDUA	averageES_EDUA_age_old	ES_EDUA	age_oldES_EDUA_age_young	ES_EDUA	age_youngES_EDUA_depr	ES_EDUA	deprES_EDUA_gender	ES_EDUA	genderES_STCS	ES_STCS	averageES_STCS_depr	ES_STCS	deprES_STCS_edu_primary	ES_STCS	edu_primaryES_STCS_edu_secondary	ES_STCS	edu_secondaryES_STCS_gender	ES_STCS	genderES_STCS_migrant	ES_STCS	migrantES_STCS_ver_ineq	ES_STCS	ver_ineqHO_EXP	HO_EXP	averageHO_EXP_depr	HO_EXP	deprHO_NUMR	HO_NUMR	averageHO_NUMR_depr	HO_NUMR	deprHO_NUMR_migrant	HO_NUMR	migrantHS_LEB	HS_LEB	averageHS_LEB_edu_primary	HS_LEB	edu_primaryHS_LEB_edu_secondary	HS_LEB	edu_secondaryHS_LEB_ver_ineq	HS_LEB	ver_ineqHS_SFRH	HS_SFRH	averageHS_SFRH_age_old	HS_SFRH	age_oldHS_SFRH_age_young	HS_SFRH	age_youngHS_SFRH_depr	HS_SFRH	deprHS_SFRH_edu_primary	HS_SFRH	edu_primaryHS_SFRH_edu_secondary	HS_SFRH	edu_secondaryHS_SFRH_gender	HS_SFRH	genderHS_SFRH_migrant	HS_SFRH	migrantIW_HADI	IW_HADI	averageIW_HADI_age_old	IW_HADI	age_oldIW_HADI_age_young	IW_HADI	age_youngIW_HADI_depr	IW_HADI	deprIW_HADI_migrant	IW_HADI	migrantIW_HADI_ver_ineq	IW_HADI	ver_ineqIW_HNFW	IW_HNFW	averageIW_HNFW_age_old	IW_HNFW	age_oldIW_HNFW_age_young	IW_HNFW	age_youngIW_HNFW_depr	IW_HNFW	deprIW_HNFW_edu_primary	IW_HNFW	edu_primaryIW_HNFW_edu_secondary	IW_HNFW	edu_secondaryIW_HNFW_migrant	IW_HNFW	migrantIW_HNFW_ver_ineq	IW_HNFW	ver_ineqJE_LTUR	JE_LTUR	averageJE_EMP_age_old	JE_LTUR	age_oldJE_EMP_age_young	JE_LTUR	age_youngJE_EMP_depr	JE_LTUR	deprJE_EMP_edu_primary	JE_LTUR	edu_primaryJE_EMP_edu_secondary	JE_LTUR	edu_secondaryJE_EMP_gender	JE_LTUR	genderJE_EMPL	JE_EMPL	averageJE_EMPL_age_old	JE_EMPL	age_oldJE_EMPL_age_young	JE_EMPL	age_youngJE_EMPL_edu_primary	JE_EMPL	edu_primaryJE_EMPL_edu_secondary	JE_EMPL	edu_secondaryJE_EMPL_gender	JE_EMPL	genderJE_LP	JE_LP	averageJE_LP_depr	JE_LP	deprJE_LP_gender	JE_LP	genderJE_PE	JE_PE	averageJE_PE_age_old	JE_PE	age_oldJE_PE_age_young	JE_PE	age_youngJE_PE_edu_primary	JE_PE	edu_primaryJE_PE_edu_secondary	JE_PE	edu_secondaryJE_PE_gender	JE_PE	genderJE_PE_ver_ineq	JE_PE	ver_ineqPS_HOMI	PS_HOMI	averagePS_HOMI_depr	PS_HOMI	deprPS_HOMI_gender	PS_HOMI	genderPS_SFRV	PS_SFRV	averagePS_SFRV_age_old	PS_SFRV	age_oldPS_SFRV_age_young	PS_SFRV	age_youngPS_SFRV_depr	PS_SFRV	deprPS_SFRV_edu_primary	PS_SFRV	edu_primaryPS_SFRV_edu_secondary	PS_SFRV	edu_secondaryPS_SFRV_gender	PS_SFRV	genderPS_SFRV_migrant	PS_SFRV	migrantSC_SNTWS	SC_SNTWS	averageSC_SNTWS_age_old	SC_SNTWS	age_oldSC_SNTWS_age_young	SC_SNTWS	age_youngSC_SNTWS_depr	SC_SNTWS	deprSC_SNTWS_edu_primary	SC_SNTWS	edu_primarySC_SNTWS_edu_secondary	SC_SNTWS	edu_secondarySC_SNTWS_gender	SC_SNTWS	genderSC_SNTWS_migrant	SC_SNTWS	migrantSC_TSOC	SC_TSOC	averageSC_TSOC_age_old	SC_TSOC	age_oldSC_TSOC_age_young	SC_TSOC	age_youngSC_TSOC_gender	SC_TSOC	genderSC_TSOC_ver_ineq	SC_TSOC	ver_ineqSW_LIFS	SW_LIFS	averageSW_LIFS_age_old	SW_LIFS	age_oldSW_LIFS_age_young	SW_LIFS	age_youngSW_LIFS_depr	SW_LIFS	deprSW_LIFS_edu_primary	SW_LIFS	edu_primarySW_LIFS_edu_secondary	SW_LIFS	edu_secondarySW_LIFS_gender	SW_LIFS	genderSW_LIFS_migrant	SW_LIFS	migrantSW_LIFS_ver_ineq	SW_LIFS	ver_ineqWL_EWLH	WL_EWLH	averageWL_EWLH_age_old	WL_EWLH	age_oldWL_EWLH_age_young	WL_EWLH	age_youngWL_EWLH_depr	WL_EWLH	deprWL_EWLH_edu_primary	WL_EWLH	edu_primaryWL_EWLH_edu_secondary	WL_EWLH	edu_secondaryWL_EWLH_gender	WL_EWLH	genderWL_EWLH_ver_ineq	WL_EWLH	ver_ineqWL_LEPC	WL_LEPC	averageWL_LEPC_age_old	WL_LEPC	age_oldWL_LEPC_age_young	WL_LEPC	age_youngWL_LEPC_gender	WL_LEPC	genderWL_LEPC_ver_ineq	WL_LEPC	ver_ineq

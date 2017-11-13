@@ -59,29 +59,29 @@
 	<div id="indic_sel">
 		<div class="dropdown_text" >Pick your indicator:</div>
 		<select id="indic_dropdown" onchange="displayIneq(this.value)";>
-			<option value="IW_HADI" selected="selected">Net household adjusted disposable income</option>
-			<option value="IW_HNFW" >Household net wealth</option>
-			<option value="JE_EMPL" >Employment rate</option>
-			<option value="JE_PE" >Average annual gross earnings per full-time employee</option>
-			<option value="JE_LP" >Low pay</option>
-			<option value="JE_LTUR" >Long-term unemployment rate</option>
-			<option value="HO_NUMR" >Rooms per person</option>
-			<option value="HO_EXP" >Housing expenditure</option>
-			<option value="WL_EWLH" >Employees working very long hours</option>
-			<option value="WL_LEPC" >Time devoted to leisure and personal care</option>
-			<option value="HS_LEB" >Life expectancy at birth</option>
-			<option value="HS_SFRH" >Perceived health status</option>
-			<option value="ES_EDUA" >Educational attainment of the adult working-aged population</option>
-			<option value="ES_ADCO" >Adult competencies (PIAAC)</option>
-			<option value="ES_STCS" >Cognitive skills of 15 year old students</option>
-			<option value="SC_SNTWS" >Perceived social network support</option>
-			<option value="CG_SAYG" >Having a say on what the government does</option>
-			<option value="CG_VOTO" >Voter turnout</option>
-			<option value="EQ_SATW" >Satisfaction with water quality</option>
+			<option value="ES_ADCO"  selected="selected">Adult skills</option>
 			<option value="EQ_AIRP" >Air pollution</option>
-			<option value="PS_HOMI" >Homicides rates</option>
+			<option value="ES_STCS" >Cognitive skills of 15-year-old students</option>
+			<option value="JE_PE" >Earnings</option>
+			<option value="ES_EDUA" >Educational attainment</option>
+			<option value="JE_EMPL" >Employment rate</option>
+			<option value="WL_EWLH" >Employees working very long hours</option>
 			<option value="PS_SFRV" >Feeling safe walking alone at night</option>
+			<option value="PS_HOMI" >Homicides rates</option>
+			<option value="IW_HNFW" >Household net wealth</option>
+			<option value="HO_EXP" >Housing expenditure</option>
+			<option value="HS_LEB" >Life expectancy at birth</option>
 			<option value="SW_LIFS" >Life satisfaction</option>
+			<option value="JE_LP" >Low pay</option>
+			<option value="IW_HADI">Net household adjusted disposable income</option>
+			<option value="HO_NUMR" >Overcrowded dwellings</option>
+			<option value="HS_SFRH" >Perceived health status</option>
+			<option value="CG_SAYG" >Political efficacy</option>
+			<option value="SC_SNTWS" >Social network support</option>
+			<option value="WL_LEPC" >Time devoted to leisure and personal care</option>
+			<option value="JE_LTUR" >Unemployment rate</option>
+			<option value="CG_VOTO" >Voter turnout</option>
+			<option value="EQ_SATW" >Water quality</option>
 		<select>
 	</div>
 
@@ -159,7 +159,7 @@
 	    TOOLTIPS 
  ***********************-->
 	<div id="avgIndicTooltip" class="hidden">
-		<b><span id="countryName">country</span></b><br/><i><span id="indicatorName">indicator</span></i><br/><span id="indicatorMeasure">measure</span>
+		<b><span id="countryName">country</span></b><br/><i><span id="indicatorName">indicator</span></i><br/><span id="indicatorValue">value</span><br/><i><span id="indicatorMeasure">measure</span></i>
 	</div>
 
 
@@ -181,6 +181,7 @@
 		<br/>
 <script src="libs/d3.v4.min.js"></script>
 <script src="libs/d3-scale-chromatic.v1.min.js"></script>
+<script src="js/unique.js"></script>
 <script src="js/setupbutton.js"></script>
 <script src="js/displayIneq.js"></script>
 <script src="js/normalize.js"></script>

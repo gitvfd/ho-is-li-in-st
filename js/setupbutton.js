@@ -42,7 +42,7 @@ function setupButtons() {
     d3.select('#downloadLink')
     .on('click', function () {
         // Remove active class from all buttons
-        window.open("", '_blank');
+        window.open("http://www.oecd.org/statistics/How-is-Life-2017-dataviz-on-inequalities-in-well-being-data.xlsx", '_blank');
     });
 
     d3.select('#helpLink')

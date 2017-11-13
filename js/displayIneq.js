@@ -34,6 +34,9 @@ function displayIneq(ISO){
 			IsoIneq.push(d);
 	})
 
+
+
+
 	var listVariable=[];
 	var listIneq=[];
 
@@ -80,9 +83,30 @@ function displayIneq(ISO){
 	document.getElementsByClassName("pickedCountry")[1].innerHTML=countrySel;
 
 
+	//////////////////////////////////////
+
+	////////REORDER VARIABLE FOR HEATMAP
+
+	//////////////////////////////////////
+	var orderListVariable=[];
+	var tempRank;
+	listVariable.forEach(function(k){ 
+		dimensionList.forEach(function(l){
+						if(k.substr(0, 2)==l.code)
+							tempRank=l.rank;
+		});
+		orderListVariable.push({"variable":k,"rank":tempRank})
+	})
+	orderListVariable=orderListVariable.sort(function(a,b) { return +a.rank - +b.rank; })
+	var listVariable2=[];
+
+	orderListVariable.forEach(function(k){listVariable2.push(k.variable)})
+
+
+
 	// Draw Heatmap and inequality card
 	distriIndicViz(selectedIndic,ISO);
-	heatMap(listIneq,listVariable,IsoIneq);
+	heatMap(listIneq,listVariable2,IsoIneq);
 	ineqindic(selectedIndic,ISO,allIsoIndicIneq);
 }
 

@@ -1,12 +1,12 @@
-code,Dimension
-IW,Income and wealth
-JE,Jobs and earnings
-HO,Housing
-WL,Work-life balance
-HS,Health status
-ES,Education and skills
-SC,Social connections
-CG,Civic engagement and governance
-EQ,Environmental quality
-PS,Personal security
-SW,Life Satisfaction
+rank,code,Dimension
+1,IW,Income and wealth
+2,JE,Jobs and earnings
+3,HO,Housing
+4,HS,Health status
+5,WL,Work-life balance
+6,ES,Education and skills
+7,SC,Social connections
+8,CG,Civic engagement and governance
+9,EQ,Environmental quality
+10,PS,Personal security
+11,SW,Life Satisfaction

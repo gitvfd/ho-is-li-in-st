@@ -4,12 +4,12 @@ function heatMap(listIneq,listVariable,IsoIneq){
 
 	gridSize = Math.floor((width-marginLeft -marginRight) /(listVariable.length+2));
       
-    var colorScale = d3.scaleLinear()//.scaleSequential(d3.interpolateReds)
-          .domain([0, 1])
-          .range(["#fee9ea", "#F8282E"]);
+    var colorScale = d3.scaleSequential(d3.interpolatePuBuGn) //.scaleLinear()
+          .domain([0,1])
+          //.range(["#fee9ea", "#F8282E"]);
 
 
-	listVariable=listVariable.sort(function(a,b){return a.localeCompare(b);});
+	//listVariable=listVariable.sort(function(a,b){return a.localeCompare(b);});
 	var scaleIndic=d3.scalePoint().domain(listVariable).range([0,listVariable.length]);
 	var scaleIneq=d3.scalePoint().domain(listIneq).range([0,listIneq.length]);
 
@@ -275,7 +275,7 @@ linearGradient.append("stop")
     .attr("stop-color", "#F8282E"); //dark blue
 //Draw the rectangle and fill with gradient
 
-heatmap.append("rect")
+/**heatmap.append("rect")
 	.attr("width", 0.5*width)
 	.attr("height", gridSize/2)
 	.attr("x", 0.25*width)
@@ -300,7 +300,25 @@ heatmap.append("rect")
             //Hide the tooltip
 			d3.select("#tooltipScaleExplanation").classed("hidden", true);	            
 
-	});
+	});**/
+
+////////////////////////
+// NEW LEGEND //  
+////////////////////////
+heatmap.append("image")
+		.attr("x",0.25*width)
+		.attr("y",1.25*listIneq.length*width /listVariable.length -gridSize/2)
+		.attr("width",0.5*width)
+		.attr("height",20)
+	    .attr("xlink:href", function(d){
+				var url="img/PuBuGn.png";
+	    		return url;	
+	    })
+
+
+////////////////////////
+// TEXT WARNING //  
+////////////////////////
 
 //Append title
 heatmap.append("text")
@@ -308,14 +326,22 @@ heatmap.append("text")
 	.attr("x", 0.25*width)
 	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
 	.style("text-anchor", "middle")
-	.text("Most unequal");
+	.text("Perform worse");
+
+
+heatmap.append("text")
+	.attr("class", "legendTitle")
+	.attr("x", 0.5*width)
+	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
+	.style("text-anchor", "middle")
+	.text("Equality in well-being");
 
 heatmap.append("text")
 	.attr("class", "legendTitle")
 	.attr("x", 0.75*width)
 	.attr("y", 1.25*listIneq.length*width /listVariable.length - gridSize/2 - 5)
 	.style("text-anchor", "middle")
-	.text("Least unequal");
+	.text("Perform better");
 
 heatmap.append("text")
 	.attr("class", "legendTitleException")

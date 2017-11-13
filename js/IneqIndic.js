@@ -33,8 +33,30 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
 	    .style("fill","#78869f" )
-	    .text("Least unequal");
-	
+	    .text("Perform better");
+
+	ineqIndic.append("text")
+		.attr("class","tempBox")
+	    .attr("x", 1.0*marginRight)
+	    .attr("y", width/4+ 0.8*marginBottom)
+	    .attr("dy", ".35em")
+	    .attr("text-anchor", "start")
+	    .style("font", "300 italic 0.8vw TheSerif")
+	    .style("fill","#78869f" )
+	    .text("Equality in");
+
+
+	ineqIndic.append("text")
+		.attr("class","tempBox")
+	    .attr("x", 1.0*marginRight)
+	    .attr("y", width/4+ 1.2*marginBottom)
+	    .attr("dy", ".35em")
+	    .attr("text-anchor", "start")
+	    .style("font", "300 italic 0.8vw TheSerif")
+	    .style("fill","#78869f" )
+	    .text("well-being");
+
+
 	ineqIndic.append("text")
 		.attr("class","tempBox")
 	    .attr("x", 0.25*marginRight)
@@ -43,14 +65,14 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    .attr("text-anchor", "start")
 	    .style("font", "300 italic 1vw TheSerif")
 	    .style("fill","#78869f" )
-	    .text("Most unequal");
+	    .text("Perform worse");
 
 	ineqIndic.append("image")
 		.attr("class","tempBox")
-		.attr("x",0.5*marginRight)
-		.attr("y",2*marginTop)
+		.attr("x",0.1*marginRight)
+		.attr("y",2.5*marginTop)
 		.attr("width",(2*width/3 - marginBottom/2-2*marginTop)/8)
-		.attr("height",width/2 - marginBottom/2-2*marginTop)
+		.attr("height",width/3)
 		.attr("xlink:href", "icons/arrow2.svg")
 		.on("mouseover",function(){
 
@@ -132,6 +154,21 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 
 
 
+
+ineqIndic.append("line")
+		.attr("class","line")
+	    .attr("x1", 0.1*width)
+	    .attr("x2", 0.9* width)
+	    .attr("y1", linearScale(0.5))
+	    .attr("y2", linearScale(0.5))
+    	.style("stroke", colorScale(indicatorDim))
+    	.style("stroke-width","1px")
+        .style("stroke-dasharray", ("5, 5"))  
+    	.style("fill","none");
+	
+
+
+
 	//Add line selected country
 	var line = d3.line()
     	.x(function(d, i) { return ordinalScale(d.typeIneq) + sizeSquare/2; }) // set the x values for the line generator
@@ -146,8 +183,8 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
     	.attr("class", "line") // Assign a class for styling 
     	.attr("d", line)
     	.style("stroke", colorScale(indicatorDim))
-    	.style("stroke-width","0.5px")
-        .style("stroke-dasharray", ("6, 3"))  
+    	.style("stroke-width","0.25px")
+        .style("stroke-dasharray", ("2, 2"))  
     	.style("fill","none");
 
 
@@ -161,7 +198,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    })
 	    .attr("x", function(d) {
 			if(ISO==d.ISO)
-			return ordinalScale(d.typeIneq)-3;
+			return ordinalScale(d.typeIneq)-4;
 				else
 			return ordinalScale(d.typeIneq);
 	    })
@@ -173,13 +210,13 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	    })
 		.attr("height",function(d){
 			if(ISO==d.ISO)
-				return sizeSquare/3;
+				return sizeSquare/2;
 			else
 				return sizeSquare/3;
 		})
 		.attr("width",function(d){
 			if(ISO==d.ISO)
-				return sizeSquare+6;
+				return sizeSquare+8;
 			else
 				return sizeSquare;
 		})
@@ -239,8 +276,8 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		        .text(indicName);
 		        
 		        
-		    /**d3.select("#indicatorValue")
-		        .text(f(d.value));**/
+		    d3.select("#indicatorValue")
+		        .text("");
 
 
 		    d3.select("#indicatorMeasure")

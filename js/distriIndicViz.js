@@ -220,6 +220,17 @@ function distriIndicViz(selectedIndic,ISO){
 			})
 			document.getElementById('pickedindicator').innerHTML=pickedindicatorText;
 
+
+
+
+		var averageText;
+		indicatorList.forEach(function(d){
+			if(selectedIndic==d.code)
+				averageText=d.Display;
+			})
+			document.getElementById('typeInd').innerHTML=averageText;
+			
+
 	distributionIndic.append("text")
 	.attr("x",width-marginRight/2)
 	.attr("y",37.5)

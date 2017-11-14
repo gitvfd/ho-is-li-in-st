@@ -213,6 +213,13 @@ section {
   color: #4A4A4A;
 }
 
+#typeInd{
+  font-family: CaeciliaLTStd-Bold;
+  font-size: 15px;
+  font-style: italic;
+  color: #4A4A4A;
+}
+
 #countries {
   stroke: #d4dbe3;
   stroke-width: 1px;

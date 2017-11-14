@@ -7,7 +7,7 @@ function distriIndicViz(selectedIndic,ISO){
 
  	var data_indic=[];
 	datatot.forEach(function(d){
-		if((d.variable==selectedIndic) && (d.ISO!="OECD") && (d.value!="")){
+		if((d.variable==selectedIndic) /**&& (d.ISO!="OECD")**/ && (d.value!="")){
 			data_indic.push(d);
 		}
 	})

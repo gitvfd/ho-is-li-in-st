@@ -34,6 +34,7 @@ body{
 	color: #4A4A4A;
 }
 .intro_text{
+  clear:both;
   margin-top: 10px;
 	font-family: CaeciliaLTStd-Roman;
 	font-size: 18px;
@@ -47,7 +48,7 @@ body{
   font-family: CaeciliaLTStd-Italic;
   font-size: 16px;
   font-weight: 300;
-  color: #8c8c8c;
+  color: #4a4a4a;
 }
 
 
@@ -254,17 +255,17 @@ section {
 
 .legendTitle {
     font-size: 10px;
-    fill: #4F4F4F;
+    fill: #4A4A4A;
     font-weight: 300;
 }
 .legendTitleException {
     font-size: 8px;
-    fill: #4F4F4F;
+    fill: #4A4A4A;
     font-weight: 300;
 }
 
 .legend{
-  fill: #4F4F4F;
+  fill: #4A4A4A;
   font-family:TheSerif ;
   font-weight: 300;
   font-size: 13px;

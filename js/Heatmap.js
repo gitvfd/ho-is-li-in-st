@@ -180,7 +180,7 @@ function heatMap(listIneq,listVariable,IsoIneq){
 	  	.attr("height", gridSize)
 	  	.style("fill", function(d){return colorScale(parseFloat(d.normalized))})
 	  	.style("stroke", "#999999")
-	  	.style("stroke-width", "0.25px")
+	  	.style("stroke-width", "0.5px")
 		.on("mouseover",function(d){
 			d3.select(this).style("opacity",0.5)//.attr("width",gridSize*1.2).attr("height",gridSize*1.2)
 			//document.getElementById("tooltipHeatValue").innerHTML=parseFloat(d.normalized);

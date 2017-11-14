@@ -4,15 +4,15 @@
 	<link  rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body id="page">
-	<div class="heading1">Inequalities in well-being</div>
-	<div class="heading1Sub">Are all OECD countries equally unequal?</div>
+	<div class="heading1">Are all OECD countries equally unequal?</div>
+	<div class="heading1Sub">Inequalities in well-being</div>
 	<div class="intro_text">See how well-being in OECD countries is distributed between individuals, generations and genders, and between people from different education levels and migrant backgrounds.</div>
 
 
 	<input id="toggle" type="checkbox" >
   	<label id="hideShowToggle" for="toggle">More...</label>
 	<div id="expand" >
-    <section>Much of the debate on inequality has traditionally focused on economic resources and with good reasons — generally in OECD countries the average disposable income of the richest 20% is 5.4 times higher than that of the poorest 20%. Meanwhile the wealthiest 10% of households holds more than half of the average country’s wealth. But, fault-lines of divide exist in many other aspects of our lives. Did you know that young people are more than twice as likely to be unemployed as those aged over 25? And that men with only primary education live almost 8 years less on average than university-educated men? Click the OECD logo or visit <a href="http://oe.cd/how-is-life">oe.cd/how-is-life</a> for more information on the data and OECD work on well-being.
+    <section>Much of the debate on inequality has traditionally focused on economic resources and with good reasons — generally in OECD countries the average disposable income of the richest 20% is 5.4 times higher than that of the poorest 20%. Meanwhile the wealthiest 10% of households holds more than half of the average country’s wealth. But, fault-lines of divide exist in many other aspects of our lives. Did you know that young people are more than twice as likely to be unemployed as those aged over 25? And that men with only primary education live almost 8 years less on average than university-educated men? Click the OECD logo or visit <a href="http://oe.cd/how-is-life" target="_blank">oe.cd/how-is-life</a> for more information on the data and OECD work on well-being.
     </section>
 	</div>
 	<br/>
@@ -67,7 +67,7 @@
 			<option value="JE_EMPL" >Employment rate</option>
 			<option value="WL_EWLH" >Employees working very long hours</option>
 			<option value="PS_SFRV" >Feeling safe walking alone at night</option>
-			<option value="PS_HOMI" >Homicides rates</option>
+			<option value="PS_HOMI" >Homicide rates</option>
 			<option value="IW_HNFW" >Household net wealth</option>
 			<option value="HO_EXP" >Housing expenditure</option>
 			<option value="HS_LEB" >Life expectancy at birth</option>
@@ -105,12 +105,11 @@
 		    INEQUALITY CARD
 	 	***********************-->
 	 	<div id="inequalityCard">
-			<div class="explanations">Select a country and a well-being indicator to see the country’s average performance relative to other OECD countries.</div>
-			<div class="pickedCountry"></div>
+			<!--<div class="explanations">Select a country and a well-being indicator to see the country’s average performance relative to other OECD countries.</div>-->
+			<div> <span class="pickedCountry"></span><span > - </span><span class="indicatorTitle" id="pickedindicator">the selected indicator</span></div> 
+			
 			<br/>
 			<div id="ineqCard">
-				<div class="heading2" ><span id="pickedindicator">the selected indicator</span></div>
-		
 				<div id="distriIndicViz"></div>
 				<br/>
 				<div class="explanations">See how the performance for this indicator varies in society between individuals, generations and genders, and between people from different education levels and migrant backgrounds.</div>
@@ -128,7 +127,7 @@
 		***********************-->
 
 	 	<div id="countryCard">
-			<div class="explanations">Does high inequality in income go hand-in-hand with high inequality in education or civic participation? Are some population groups more at risk of facing multiple disadvantages? <br/><br/>The chart below shows the various types of inequality that may exist in the 11 dimensions of well-being explored in <a href="http://oe.cd/how-is-life">How’s Life?</a>.<br/></div>
+			<div class="explanations">Does high inequality in income go hand-in-hand with high inequality in education or civic participation? Are some population groups more at risk of facing multiple disadvantages? <br/><br/>The chart below shows some of the various types of inequality existing in the 11 dimensions of well-being explored in <a href="http://oe.cd/how-is-life" target="_blank">How’s Life?</a>.<br/></div>
 			<div class="pickedCountry"></div>
 			<br/>
 			<div class="heading2" >Inequalities across well-being indicators</div>

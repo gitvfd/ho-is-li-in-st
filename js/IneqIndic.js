@@ -140,11 +140,25 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 			listIneqIndiCou.push(toPush)
 	})
 
+console.log(listIneqIndi.length)
 	//Define Scales
+	var interval= (width-4*marginLeft)/8;
+	var markOne,markTwo;
+
+	if(listIneqIndi.length==1){markOne=3;markTwo=4;}
+	else if(listIneqIndi.length==2){markOne=3;markTwo=3;}
+	else if(listIneqIndi.length==3){markOne=2;markTwo=3;}
+	else if(listIneqIndi.length==4){markOne=2;markTwo=2;}
+	else if(listIneqIndi.length==5){markOne=1;markTwo=2;}
+	else if(listIneqIndi.length==6){markOne=1;markTwo=1;}
+	else if(listIneqIndi.length==7){markOne=1;markTwo=0;}
+	else if(listIneqIndi.length==8){markOne=0;markTwo=0;}
+
+
 	var ordinalScale = d3.scaleBand()
 		.domain(listIneqIndi)
-		//.range([3*marginLeft,width-marginRight]);
-		.range([3*marginLeft+width/2-listIneqIndi.length*width/16,width/2+listIneqIndi.length*width/16]);
+		.range([3*marginLeft +markOne * interval,width-marginRight-markTwo * interval]);
+		//.range([3*marginLeft+width/2-listIneqIndi.length*width/16,width/2+listIneqIndi.length*width/16]);
 
 	var linearScale = d3.scaleLinear()
 		.domain([0,1])
@@ -197,47 +211,30 @@ ineqIndic.append("line")
 			return d.ISO +" "+d.typeIneq;
 	    })
 	    .attr("x", function(d) {
-			if(ISO==d.ISO)
-			return ordinalScale(d.typeIneq)-4;
-				else
 			return ordinalScale(d.typeIneq);
 	    })
 	    .attr("y", function(d) {
-			if(ISO==d.ISO)
-	    	return linearScale(d.normalized);
-	    		else
 	    	return linearScale(d.normalized);
 	    })
 		.attr("height",function(d){
-			if(ISO==d.ISO)
-				return sizeSquare/2;
-			else
 				return sizeSquare/3;
 		})
 		.attr("width",function(d){
-			if(ISO==d.ISO)
-				return sizeSquare+8;
-			else
 				return sizeSquare;
 		})
 		.attr("fill",function (d){
 			var tempFill=listIneqIndiCou.indexOf(d.typeIneq)
 			if (tempFill==-1)
 				return "#b7b7b7";
-			else if(ISO==d.ISO)
-				return "#476991";
 			else
 				return colorScale(indicatorDim);
 		})
 		.style('opacity',function (d){
-			if(ISO==d.ISO)
-				return 1;
-			else
 				return 0.25;
 		})
 		.on("mouseover",function(d){
 	    	d3.select(this)
-				.style("opacity",0.5);
+				.style("opacity",0.85);
 
 			var xPosition = d3.event.pageX+20;
 			var yPosition = d3.event.pageY+15;
@@ -291,12 +288,7 @@ ineqIndic.append("line")
 	    })
 	    .on("mouseout",function(d){
 				d3.select(this)
-					.style("opacity",  function (d){
-						if(ISO==d.ISO)
-							return 1;
-						else
-							return 0.25;
-					})
+					.style("opacity",0.25)
 	            
 	            //Hide the tooltip
 				d3.select("#avgIndicTooltip").classed("hidden", true);	            
@@ -307,6 +299,113 @@ ineqIndic.append("line")
 				document.getElementById("country_dropdown").value=d.ISO;
 				displayIneq(d.ISO);
 			});
+
+
+
+
+	//Draw country values for this inequality Type
+	ineqIndic.selectAll()
+	    .data(ineqData.filter(function(d){return ISO==d.ISO}))
+	    .enter()
+	    .append("rect")
+	    .attr("class",function(d) {
+			return d.ISO +" "+d.typeIneq;
+	    })
+	    .attr("x", function(d) {
+			return ordinalScale(d.typeIneq)-4;
+	    })
+	    .attr("y", function(d) {
+	    	return linearScale(d.normalized);
+	    })
+		.attr("height",function(d){
+				return sizeSquare/2;
+		})
+		.attr("width",function(d){
+				return sizeSquare+8;
+		})
+		.attr("fill",function (d){
+				return "#476991";
+		})
+		.style('opacity',function (d){
+				return 1;
+		})
+		.on("mouseover",function(d){
+	    	//d3.select(this)
+			//	.style("opacity",0.5);
+
+			var xPosition = d3.event.pageX+20;
+			var yPosition = d3.event.pageY+15;
+
+			if (yPosition>window.innerHeight-200)
+				yPosition=yPosition-100;
+
+			var indicName;
+			var indicMeasure;
+			indicatorList.forEach(function(k){
+				var refParent;
+				relationshipList.forEach(function(f){
+					if(d.variable==f.variable){refParent=f.parents;}
+						
+				})
+				if(refParent==k.code){
+					indicName=k.Indicator;
+					indicMeasure=k.Measure;
+
+				}
+			})
+
+			var countryName;
+			correspondanceISO.forEach(function(k){
+
+				if(d.ISO==k.ISO){
+					countryName=k.country;}
+
+			})
+
+		     d3.select("#countryName")
+		        .text(countryName);
+
+
+		     d3.select("#indicatorName")
+		        .text(indicName);
+		        
+		        
+		    d3.select("#indicatorValue")
+		        .text("");
+
+
+		    d3.select("#indicatorMeasure")
+		        .text(d.desc);
+
+			d3.select("#avgIndicTooltip")
+		        .style("left", xPosition + "px")
+		        .style("top", yPosition + "px") ;
+
+			d3.select("#avgIndicTooltip").classed("hidden", false);
+	    })
+	    .on("mouseout",function(d){
+				//d3.select(this)
+				//	.style("opacity", 1)
+	            
+	            //Hide the tooltip
+				d3.select("#avgIndicTooltip").classed("hidden", true);	            
+
+		})
+			.on("click",function(d){
+				//document.getElementById("country_dropdown").options[document.getElementById("country_dropdown").selectedIndex].value=d.ISO;
+				document.getElementById("country_dropdown").value=d.ISO;
+				displayIneq(d.ISO);
+			});
+
+
+
+
+
+
+
+
+
+
 
 
 	var ineqIcons = ineqIndic.selectAll("g.ineq")

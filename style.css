@@ -9,9 +9,9 @@ body{
 .heading1{
   float:left;
 	font-family: CaeciliaLTStd-Bold;
-	font-size: 32px;
+	font-size: 28px;
 	color: #4A4A4A;
-  margin:0px 10px 10px 0px;
+  margin:4px 10px 10px 0px;
 }
 
 .heading1Sub{
@@ -206,6 +206,13 @@ section {
 	color: #4A4A4A;
 }
 
+.indicatorTitle{
+  font-family: CaeciliaLTStd-Bold;
+  font-size: 18px;
+  font-style: italic;
+  color: #4A4A4A;
+}
+
 #countries {
   stroke: #d4dbe3;
   stroke-width: 1px;
@@ -249,6 +256,12 @@ section {
     font-weight: 300;
 }
 
+.legend{
+  fill: #4F4F4F;
+  font-family:TheSerif ;
+  font-weight: 300;
+  font-size: 13px;
+}
 
 
 

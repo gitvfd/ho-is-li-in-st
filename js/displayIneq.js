@@ -14,7 +14,7 @@ function displayIneq(ISO){
 			if(d.variable==f.variable){refParent=f.parents;}
 				
 		})
-		if((refParent==selectedIndic) && (d.ISO!="OECD")&& (d.value!=""))
+		if((refParent==selectedIndic) /**&& (d.ISO!="OECD")**/ && (d.value!=""))
 			allIsoIndicIneq.push(d);
 	})
 

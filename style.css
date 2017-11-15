@@ -132,8 +132,8 @@ section {
  	background:none;
 
   /** MOZILLA FIREFOX BUTTON APPEARANCE **/
-  -moz-appearance: listitem;
-  -webkit-appearance: listitem;
+  /**-moz-appearance: listitem;
+  -webkit-appearance: listitem;**/
 }
 
 #country_sel,#indic_sel{
@@ -171,6 +171,7 @@ section {
 .button.active {
   color:#ffffff;
   background: #29394c;
+  cursor:not-allowed;
 }
 
 

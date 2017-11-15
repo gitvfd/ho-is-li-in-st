@@ -95,7 +95,7 @@ section {
 
 }
 #toggle:checked ~ #expand {
-  height: 350px;
+  height: 240px;
 }
 #toggle:checked ~ label::before {
   content: "-";

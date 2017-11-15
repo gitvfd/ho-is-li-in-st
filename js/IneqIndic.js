@@ -74,7 +74,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 		.attr("width",(2*width/3 - marginBottom/2-2*marginTop)/8)
 		.attr("height",width/3)
 		.attr("xlink:href", "icons/arrow2.svg")
-		.on("mouseover",function(){
+		/**.on("mouseover",function(){
 
 			var xPosition = d3.event.pageX+20;
 			var yPosition = d3.event.pageY+15;
@@ -93,7 +93,7 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 	            //Hide the tooltip
 				d3.select("#tooltipScaleExplanation").classed("hidden", true);	            
 
-		});
+		});**/
 
 
     //Prepare data

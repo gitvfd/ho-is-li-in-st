@@ -214,7 +214,7 @@ ineqIndic.append("line")
 			return ordinalScale(d.typeIneq);
 	    })
 	    .attr("y", function(d) {
-	    	return linearScale(d.normalized);
+	    	return linearScale(d.normalized)-sizeSquare/6;
 	    })
 		.attr("height",function(d){
 				return sizeSquare/3;
@@ -315,7 +315,7 @@ ineqIndic.append("line")
 			return ordinalScale(d.typeIneq)-4;
 	    })
 	    .attr("y", function(d) {
-	    	return linearScale(d.normalized);
+	    	return linearScale(d.normalized)-sizeSquare/4;
 	    })
 		.attr("height",function(d){
 				return sizeSquare/2;

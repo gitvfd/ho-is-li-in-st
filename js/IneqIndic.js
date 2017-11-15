@@ -140,7 +140,6 @@ function ineqindic (selectedIndic,ISO,allIsoIndicIneq){
 			listIneqIndiCou.push(toPush)
 	})
 
-console.log(listIneqIndi.length)
 	//Define Scales
 	var interval= (width-4*marginLeft)/8;
 	var markOne,markTwo;
@@ -201,20 +200,24 @@ ineqIndic.append("line")
         .style("stroke-dasharray", ("2, 2"))  
     	.style("fill","none");
 
-
 	//Draw country values for this inequality Type
 	ineqIndic.selectAll()
 	    .data(ineqData)
 	    .enter()
 	    .append("rect")
 	    .attr("class",function(d) {
+
+
 			return d.ISO +" "+d.typeIneq;
 	    })
 	    .attr("x", function(d) {
 			return ordinalScale(d.typeIneq);
 	    })
 	    .attr("y", function(d) {
-	    	return linearScale(d.normalized)-sizeSquare/6;
+	    	if(d.typeIneq=="deprivation"||d.typeIneq=="vertical")
+	    		return linearScale(d.normalized)
+	    	else
+	    		return linearScale(d.normalized)-sizeSquare/6;
 	    })
 		.attr("height",function(d){
 				return sizeSquare/3;
@@ -315,7 +318,10 @@ ineqIndic.append("line")
 			return ordinalScale(d.typeIneq)-4;
 	    })
 	    .attr("y", function(d) {
-	    	return linearScale(d.normalized)-sizeSquare/4;
+	    	if(d.typeIneq=="deprivation"||d.typeIneq=="vertical")
+	    		return linearScale(d.normalized)
+	    	else
+	    		return linearScale(d.normalized)-sizeSquare/4;
 	    })
 		.attr("height",function(d){
 				return sizeSquare/2;

@@ -2699,42 +2699,42 @@ SVN	JE_EMP_age_old	1.119	10.66283703	old	"On average, in Slovenia older adults a
 SWE	JE_EMP_age_old	1.089	8.189665794	old	"On average, in Sweden older adults are 8.2% less likely than the middle-aged to be unemployed."	0.009732083	0.137347519
 TUR	JE_EMP_age_old	1.348	25.83335495	old	"On average, in Turkey older adults are 25.8% less likely than the middle-aged to be unemployed."	0.030698733	0.433246911
 USA	JE_EMP_age_old	1.171	14.62922192	old	"On average, in the United States older adults are 14.6% less likely than the middle-aged to be unemployed."	0.017384447	0.245344251
-AUS	JE_EMPL_age_old	0.733	26.73904419	old	"On average, in Australia older adults are 26.7% less likely than the middle-aged to be employed."	-0.332950741	-0.332950741
-AUT	JE_EMPL_age_old	0.61	38.9716568	old	"On average, in Austria older adults are 39% less likely than the middle-aged to be employed."	-0.485269457	-0.485269457
-BEL	JE_EMPL_age_old	0.287	71.25479126	old	"On average, in Belgium older adults are 71.3% less likely than the middle-aged to be employed."	-0.887254417	-0.887254417
-CAN	JE_EMPL_age_old	0.681	31.93240547	old	"On average, in Canada older adults are 31.9% less likely than the middle-aged to be employed."	-0.397617728	-0.397617728
-CHE	JE_EMPL_age_old	0.724	27.59181595	old	"On average, in Switzerland older adults are 27.6% less likely than the middle-aged to be employed."	-0.343569338	-0.343569338
-CHL	JE_EMPL_age_old	0.39	61.0060463	old	"On average, in Chile older adults are 61% less likely than the middle-aged to be employed."	-0.759638548	-0.759638548
-CZE	JE_EMPL_age_old	0.334	66.61829376	old	"On average, in the Czech Republic older adults are 66.6% less likely than the middle-aged to be employed."	-0.829521418	-0.829521418
-DEU	JE_EMPL_age_old	0.545	45.46231461	old	"On average, in Germany older adults are 45.5% less likely than the middle-aged to be employed."	-0.566090226	-0.566090226
-DNK	JE_EMPL_age_old	0.705	29.45018578	old	"On average, in Denmark older adults are 29.5% less likely than the middle-aged to be employed."	-0.366709471	-0.366709471
-ESP	JE_EMPL_age_old	0.287	71.28736115	old	"On average, in Spain older adults are 71.3% less likely than the middle-aged to be employed."	-0.887659967	-0.887659967
-EST	JE_EMPL_age_old	0.469	53.12306595	old	"On average, in Estonia older adults are 53.1% less likely than the middle-aged to be employed."	-0.661480784	-0.661480784
-FIN	JE_EMPL_age_old	0.542	45.82606888	old	"On average, in Finland older adults are 45.8% less likely than the middle-aged to be employed."	-0.570619643	-0.570619643
-FRA	JE_EMPL_age_old	0.352	64.81331635	old	"On average, in France older adults are 64.8% less likely than the middle-aged to be employed."	-0.807046115	-0.807046115
-GBR	JE_EMPL_age_old	0.648	35.22107315	old	"On average, in the United Kingdom older adults are 35.2% less likely than the middle-aged to be employed."	-0.438567728	-0.438567728
-GRC	JE_EMPL_age_old	0.197	80.30931091	old	"On average, in Greece older adults are 80.3% less likely than the middle-aged to be employed."	-1	-1
-HUN	JE_EMPL_age_old	0.342	65.8017807	old	"On average, in Hungary older adults are 65.8% less likely than the middle-aged to be employed."	-0.819354296	-0.819354296
-IRL	JE_EMPL_age_old	0.435	56.49441528	old	"On average, in Ireland older adults are 56.5% less likely than the middle-aged to be employed."	-0.703460336	-0.703460336
-ISL	JE_EMPL_age_old	0.861	13.93576431	old	"On average, in Iceland older adults are 13.9% less likely than the middle-aged to be employed."	-0.173526138	-0.173526138
-ISR	JE_EMPL_age_old	0.559	44.05691528	old	"On average, in Israel older adults are 44.1% less likely than the middle-aged to be employed."	-0.548590362	-0.548590362
-ITA	JE_EMPL_age_old	0.241	75.94957733	old	"On average, in Italy older adults are 75.9% less likely than the middle-aged to be employed."	-0.945713222	-0.945713222
-JPN	JE_EMPL_age_old	0.51	49.03437042	old	"On average, in Japan older adults are 49% less likely than the middle-aged to be employed."	-0.610568941	-0.610568941
-KOR	JE_EMPL_age_old	0.358	64.22215271	old	"On average, in Korea older adults are 64.2% less likely than the middle-aged to be employed."	-0.799685001	-0.799685001
-LUX	JE_EMPL_age_old	0.311	68.8707428	old	"On average, in Luxembourg older adults are 68.9% less likely than the middle-aged to be employed."	-0.857568622	-0.857568622
-LVA	JE_EMPL_age_old	0.414	58.62587357	old	"On average, in Latvia older adults are 58.6% less likely than the middle-aged to be employed."	-0.730000973	-0.730000973
-MEX	JE_EMPL_age_old	0.573	42.69365692	old	"On average, in Mexico older adults are 42.7% less likely than the middle-aged to be employed."	-0.531615257	-0.531615257
-NLD	JE_EMPL_age_old	0.733	26.65846443	old	"On average, in the Netherlands older adults are 26.7% less likely than the middle-aged to be employed."	-0.331947356	-0.331947356
-NOR	JE_EMPL_age_old	0.595	40.51214218	old	"On average, in Norway older adults are 40.5% less likely than the middle-aged to be employed."	-0.504451394	-0.504451394
-NZL	JE_EMPL_age_old	0.653	34.66294098	old	"On average, in New Zealand older adults are 34.7% less likely than the middle-aged to be employed."	-0.431617975	-0.431617975
-OECD	JE_EMPL_age_old	0.489	51.09599686	old	"In the average OECD country, older adults are 51.1% less likely than the middle-aged to be employed."	-0.636240005	-0.636240005
-POL	JE_EMPL_age_old	0.354	64.63134003	old	"On average, in Poland older adults are 64.6% less likely than the middle-aged to be employed."	-0.804780185	-0.804780185
-PRT	JE_EMPL_age_old	0.298	70.20233917	old	"On average, in Portugal older adults are 70.2% less likely than the middle-aged to be employed."	-0.874149442	-0.874149442
-SVK	JE_EMPL_age_old	0.315	68.48626709	old	"On average, in the Slovak Republic older adults are 68.5% less likely than the middle-aged to be employed."	-0.852781177	-0.852781177
-SVN	JE_EMPL_age_old	0.343	65.73392487	old	"On average, in Slovenia older adults are 65.7% less likely than the middle-aged to be employed."	-0.8185094	-0.8185094
-SWE	JE_EMPL_age_old	0.516	48.39385223	old	"On average, in Sweden older adults are 48.4% less likely than the middle-aged to be employed."	-0.602593303	-0.602593303
-TUR	JE_EMPL_age_old	0.568	43.19525528	old	"On average, in Turkey older adults are 43.2% less likely than the middle-aged to be employed."	-0.537861109	-0.537861109
-USA	JE_EMPL_age_old	0.634	36.591362	old	"On average, in the United States older adults are 36.6% less likely than the middle-aged to be employed."	-0.455630392	-0.455630392
+AUS	JE_EMPL_age_old	0.784	21.61029204	old	"On average, in Australia older adults are 21.6% less likely than the middle-aged to be employed."	-0.269088251	-0.401259889
+AUT	JE_EMPL_age_old	0.588	41.16352674	old	"On average, in Austria older adults are 41.2% less likely than the middle-aged to be employed."	-0.51256232	-0.764324338
+BEL	JE_EMPL_age_old	0.574	42.56514903	old	"On average, in Belgium older adults are 42.6.3% less likely than the middle-aged to be employed."	-0.53001512	-0.79034966
+CAN	JE_EMPL_age_old	0.758	24.24611705	old	"On average, in Canada older adults are 24.2% less likely than the middle-aged to be employed."	-0.301909166	-0.450201886
+CHE	JE_EMPL_age_old	0.829	17.13734218	old	"On average, in Switzerland older adults are 17.1% less likely than the middle-aged to be employed."	-0.213391722	-0.318206158
+CHL	JE_EMPL_age_old	0.853	14.72033023	old	"On average, in Chile older adults are 14.7% less likely than the middle-aged to be employed."	-0.183295437	-0.273327082
+CZE	JE_EMPL_age_old	0.683	31.7457231	old	"On average, in the Czech Republic older adults are 31.7% less likely than the middle-aged to be employed."	-0.395293183	-0.589454566
+DEU	JE_EMPL_age_old	0.816	18.39424412	old	"On average, in Germany older adults are 18.4% less likely than the middle-aged to be employed."	-0.229042485	-0.341544313
+DNK	JE_EMPL_age_old	0.821	17.87009759	old	"On average, in Denmark older adults are 17.9% less likely than the middle-aged to be employed."	-0.222515887	-0.33181196
+ESP	JE_EMPL_age_old	0.687	31.33954666	old	"On average, in Spain older adults are 31.3% less likely than the middle-aged to be employed."	-0.390235532	-0.581912682
+EST	JE_EMPL_age_old	0.79	20.95662876	old	"On average, in Estonia older adults are 21% less likely than the middle-aged to be employed."	-0.26094893	-0.389122669
+FIN	JE_EMPL_age_old	0.768	23.15818876	old	"On average, in Finland older adults are 23.2% less likely than the middle-aged to be employed."	-0.288362439	-0.430001234
+FRA	JE_EMPL_age_old	0.622	37.84331581	old	"On average, in France older adults are 27.8% less likely than the middle-aged to be employed."	-0.471219531	-0.702674663
+GBR	JE_EMPL_age_old	0.766	23.39840251	old	"On average, in the United Kingdom older adults are 23.4% less likely than the middle-aged to be employed."	-0.291353546	-0.434461523
+GRC	JE_EMPL_age_old	0.55	45.0069482	old	"On average, in Greece older adults are 45% less likely than the middle-aged to be employed."	-0.560420052	-0.835688985
+HUN	JE_EMPL_age_old	0.606	39.39415759	old	"On average, in Hungary older adults are 39.4% less likely than the middle-aged to be employed."	-0.49053039	-0.731470693
+IRL	JE_EMPL_age_old	0.764	23.64379639	old	"On average, in Ireland older adults are 23.6% less likely than the middle-aged to be employed."	-0.294409155	-0.439017996
+ISL	JE_EMPL_age_old	0.942	5.817492059	old	"On average, in Iceland older adults are 5.8% less likely than the middle-aged to be employed."	-0.072438575	-0.108019189
+ISR	JE_EMPL_age_old	0.84	15.96792414	old	"On average, in Israel older adults are 16% less likely than the middle-aged to be employed."	-0.198830297	-0.296492405
+ITA	JE_EMPL_age_old	0.731	26.89022331	old	"On average, in Italy older adults are 26.9% less likely than the middle-aged to be employed."	-0.334833197	-0.499297649
+JPN	JE_EMPL_age_old	0.857	14.30759413	old	"On average, in Japan older adults are 14.3% less likely than the middle-aged to be employed."	-0.178156106	-0.265663398
+KOR	JE_EMPL_age_old	0.869	13.10776068	old	"On average, in Korea older adults are 13.1% less likely than the middle-aged to be employed."	-0.163215953	-0.243384892
+LUX	JE_EMPL_age_old	0.49	51.04706261	old	"On average, in Luxembourg older adults are 51% less likely than the middle-aged to be employed."	-0.635630689	-0.947841825
+LVA	JE_EMPL_age_old	0.77	23.01015548	old	"On average, in Latvia older adults are 23% less likely than the middle-aged to be employed."	-0.28651915	-0.427252552
+MEX	JE_EMPL_age_old	0.772	22.82528066	old	"On average, in Mexico older adults are 22.8% less likely than the middle-aged to be employed."	-0.284217115	-0.423819796
+NLD	JE_EMPL_age_old	0.765	23.45448597	old	"On average, in the Netherlands older adults are 23.5% less likely than the middle-aged to be employed."	-0.292051889	-0.43550288
+NOR	JE_EMPL_age_old	0.879	12.12270857	old	"On average, in Norway older adults are 12.1% less likely than the middle-aged to be employed."	-0.150950225	-0.225094445
+NZL	JE_EMPL_age_old	0.916	8.417827029	old	"On average, in New Zealand older adults are 8.4% less likely than the middle-aged to be employed."	-0.104817573	-0.156302207
+OECD	JE_EMPL_age_old	0.768	23.22959782	old	"In the average OECD country, older adults are 23.2% less likely than the middle-aged to be employed."	-0.289251614	-0.431327157
+POL	JE_EMPL_age_old	0.575	42.54673875	old	"On average, in Poland older adults are 42.5% less likely than the middle-aged to be employed."	-0.529785877	-0.790007818
+PRT	JE_EMPL_age_old	0.649	35.07879139	old	"On average, in Portugal older adults are 35.1% less likely than the middle-aged to be employed."	-0.43679607	-0.651342976
+SVK	JE_EMPL_age_old	0.613	38.70151116	old	"On average, in the Slovak Republic older adults are 38.7% less likely than the middle-aged to be employed."	-0.481905656	-0.718609634
+SVN	JE_EMPL_age_old	0.461	53.85609839	old	"On average, in Slovenia older adults are 53.9% less likely than the middle-aged to be employed."	-0.670608399	-1
+SWE	JE_EMPL_age_old	0.879	12.07012049	old	"On average, in Sweden older adults are 12.1% less likely than the middle-aged to be employed."	-0.150295406	-0.224117989
+TUR	JE_EMPL_age_old	0.557	44.30904434	old	"On average, in Turkey older adults are 44.3% less likely than the middle-aged to be employed."	-0.551729853	-0.822730306
+USA	JE_EMPL_age_old	0.793	20.71192292	old	"On average, in the United States older adults are 20.7% less likely than the middle-aged to be employed."	-0.257901888	-0.384578971
 AUS	JE_PE_age_old	0.983	1.73034668	old	"On average, in Australia hourly earnings for older adults are 1.7% lower than for the middle-aged."	-0.024182281	-0.082454003
 AUT	JE_PE_age_old	1.141	14.05265045	old	"On average, in Austria hourly earnings for older adults are 14.1% higher than for the middle-aged."	0.196391359	0.669633031
 BEL	JE_PE_age_old	1.107	10.68569469	old	"On average, in Belgium hourly earnings for older adults are 10.7% higher than for the middle-aged."	0.149336815	0.509191751
